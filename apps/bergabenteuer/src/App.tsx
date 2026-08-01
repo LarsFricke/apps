@@ -1,5 +1,5 @@
-﻿const route = [
-  { number: "01", place: "SÃ¶lden", region: "Ã–tztal", note: "Wasserfall-Klettersteige & sportliche Reserve" },
+const route = [
+  { number: "01", place: "Sölden", region: "Ötztal", note: "Wasserfall-Klettersteige & sportliche Reserve" },
   { number: "02", place: "Timmelsjoch", region: "Moos & Meran", note: "Passfahrt, optionale Ferrata & Eis" },
   { number: "03", place: "Pozza di Fassa", region: "Dolomiten", note: "Rosengarten, Gratwege & flexible Bergtage" },
   { number: "04", place: "Nauders", region: "Reschensee", note: "Goldgrat oder ruhiger Abschluss am See" },
@@ -7,27 +7,27 @@
 
 const oetztalHighlights = [
   ["01", "Stuibenfall", "Gischt direkt neben dem Drahtseil."],
-  ["02", "Lehner Wasserfall", "Originalroute und SeilbrÃ¼cke â€“ ohne E-Variante."],
-  ["03", "Gaislachkogl", "Hochgebirge ohne zusÃ¤tzlichen Klettertag."],
+  ["02", "Lehner Wasserfall", "Originalroute und Seilbrücke – ohne E-Variante."],
+  ["03", "Gaislachkogl", "Hochgebirge ohne zusätzlichen Klettertag."],
   ["04", "Schiestl als Reserve", "Steil, sportlich und nur mit echten Reserven."],
   ["05", "Ein freier Nachmittag", "Erholung ist Teil des Plans."],
 ];
 
 const dolomitesHighlights = [
-  ["01", "Roda di Vael", "Der beste Einstieg â€“ technisch moderat, insgesamt ernst."],
+  ["01", "Roda di Vael", "Der beste Einstieg – technisch moderat, insgesamt ernst."],
   ["02", "Bepi Zac", "Ein langer Gratweg durch Stellungen und Tunnel."],
-  ["03", "Santnerpass", "GroÃŸer Klassiker als anspruchsvolle Reserve."],
-  ["04", "Val San NicolÃ²", "Wiesen, Wasser und freie Pausenwahl."],
-  ["05", "HÃ¼ttenterrasse", "Ein langer Mittag darf das Wochenhighlight sein."],
+  ["03", "Santnerpass", "Großer Klassiker als anspruchsvolle Reserve."],
+  ["04", "Val San Nicolò", "Wiesen, Wasser und freie Pausenwahl."],
+  ["05", "Hüttenterrasse", "Ein langer Mittag darf das Wochenhighlight sein."],
 ];
 
 const checklist = [
-  ["Wetter", "Kein Gewitterfenster, kein starker Wind, keine Ã¼berraschenden Schneereste."],
+  ["Wetter", "Kein Gewitterfenster, kein starker Wind, keine überraschenden Schneereste."],
   ["Material", "Helm, Gurt, normgerechtes Set, Handschuhe, Erste Hilfe, geladenes Telefon."],
-  ["Kinder", "ZusÃ¤tzliche Seilsicherung dort, wo Empfehlung oder Situation sie nahelegt."],
-  ["AbstÃ¤nde", "Nur eine Person im Seilabschnitt zwischen zwei Verankerungen."],
+  ["Kinder", "Zusätzliche Seilsicherung dort, wo Empfehlung oder Situation sie nahelegt."],
+  ["Abstände", "Nur eine Person im Seilabschnitt zwischen zwei Verankerungen."],
   ["Energie", "Wasser, Brotzeit, Sonnenschutz und warme Reservekleidung."],
-  ["Abbruch", "Vorher festlegen, wann umgedreht oder ein frÃ¼her Ausstieg genommen wird."],
+  ["Abbruch", "Vorher festlegen, wann umgedreht oder ein früher Ausstieg genommen wird."],
 ];
 
 function MountainMark() {
@@ -96,9 +96,9 @@ export default function Home() {
         </a>
         <div className="navlinks">
           <a href="#route">Route</a>
-          <a href="#oetztal">Ã–tztal</a>
+          <a href="#oetztal">Ötztal</a>
           <a href="#dolomiten">Dolomiten</a>
-          <a href="#rueckreise">RÃ¼ckreise</a>
+          <a href="#rueckreise">Rückreise</a>
           <a href="#praxis">Praxis</a>
         </div>
         <a
@@ -118,40 +118,40 @@ export default function Home() {
         />
         <div className="hero-shade" />
         <div className="hero-content">
-          <p className="eyebrow light">Familien-AlpenfÃ¼hrer Â· Band 1</p>
+          <p className="eyebrow light">Familien-Alpenführer · Band 1</p>
           <h1>
             Unsere
             <br />
             Bergabenteuer
           </h1>
-          <p className="hero-sub">Ã–tztal & Dolomiten Â· Sommer 2026</p>
-          <p className="hero-meta">2 Erwachsene Â· 2 Kinder (11 Jahre)</p>
+          <p className="hero-sub">Ötztal & Dolomiten · Sommer 2026</p>
+          <p className="hero-meta">2 Erwachsene · 2 Kinder (11 Jahre)</p>
           <div className="hero-actions">
             <a className="download" href="#route">
-              Reise entdecken <span aria-hidden="true">â†“</span>
+              Reise entdecken <span aria-hidden="true">↓</span>
             </a>
             <a
               className="text-link light"
               href="/bergabenteuer/downloads/Unsere_Bergabenteuer_Band1_Oetztal_Dolomiten_2026_V2.pdf"
               download
             >
-              BroschÃ¼re laden
+              Broschüre laden
             </a>
           </div>
         </div>
-        <p className="photo-credit">Foto: Maurizio Ceol Â· CC BY 3.0</p>
+        <p className="photo-credit">Foto: Maurizio Ceol · CC BY 3.0</p>
       </section>
 
       <section id="route" className="section route-section">
         <div className="intro-grid">
           <SectionHead
-            kicker="Ãœberblick"
+            kicker="Überblick"
             title="Drei Bergwelten, eine Reise"
-            copy="Ã–tztaler Granit, SÃ¼dtiroler Ãœbergang und die hellen WÃ¤nde des Rosengartens. Der Plan bleibt bewusst flexibel: Wetter, Kraft und Lust bestimmen die Reihenfolge."
+            copy="Ötztaler Granit, Südtiroler Übergang und die hellen Wände des Rosengartens. Der Plan bleibt bewusst flexibel: Wetter, Kraft und Lust bestimmen die Reihenfolge."
           />
           <blockquote>
-            Lieber eine Tour frÃ¼her abbrechen und mit guter Stimmung zurÃ¼ckkehren,
-            als den Plan um jeden Preis vollstÃ¤ndig abzuhaken.
+            Lieber eine Tour früher abbrechen und mit guter Stimmung zurückkehren,
+            als den Plan um jeden Preis vollständig abzuhaken.
           </blockquote>
         </div>
         <div className="route-line">
@@ -168,7 +168,7 @@ export default function Home() {
           <strong>Planungsprinzip</strong>
           <p>
             Nach zwei fordernden Tagen folgt idealerweise ein leichterer Tag. In
-            den Dolomiten entscheiden nicht nur Buchstaben: LÃ¤nge, HÃ¶he,
+            den Dolomiten entscheiden nicht nur Buchstaben: Länge, Höhe,
             Alt-Schnee und ungesicherte Passagen sind oft der eigentliche Anspruch.
           </p>
         </div>
@@ -178,7 +178,7 @@ export default function Home() {
         <div className="section">
           <div className="chapter-grid">
             <SectionHead
-              kicker="Woche 1 Â· Ã–tztal"
+              kicker="Woche 1 · Ötztal"
               title="Wasser, Fels und Hochgebirge"
               copy="Zwei starke Familien-Klettersteige, eine sportliche Reserve und ein entspannter Panoramatag."
             />
@@ -193,20 +193,20 @@ export default function Home() {
             src="/bergabenteuer/images/lehner-wasserfall.jpg"
             alt="Klettersteig am Lehner Wasserfall"
           />
-          <span>Foto: Fuchs Robert Â· CC BY 3.0</span>
+          <span>Foto: Fuchs Robert · CC BY 3.0</span>
         </div>
         <div className="tour-copy">
           <p className="eyebrow">Kernoption 1</p>
           <h2>Lehner Wasserfall</h2>
           <p className="lead">
             Kompakt, eindrucksvoll und mit einer klaren Familienlinie. Die linke
-            E-Variante bleibt bewusst auÃŸen vor.
+            E-Variante bleibt bewusst außen vor.
           </p>
           <Stats
             items={[
               ["Schwierigkeit", "B/C, kurz D"],
-              ["Gesamtzeit", "ca. 3â€“3,5 h"],
-              ["HÃ¶henmeter", "ca. 220 hm"],
+              ["Gesamtzeit", "ca. 3–3,5 h"],
+              ["Höhenmeter", "ca. 220 hm"],
               ["Familienlinie", "Originalroute"],
             ]}
           />
@@ -214,9 +214,9 @@ export default function Home() {
             <div>
               <h3>Die richtige Linie</h3>
               <p>
-                Rechts vom Wasserfall verlÃ¤uft die deutlich leichtere
-                Originalroute. Der kurze D-Ãœberhang kann umgangen werden. Die
-                linke Variante enthÃ¤lt eine E-Passage und ist nicht fÃ¼r Kinder
+                Rechts vom Wasserfall verläuft die deutlich leichtere
+                Originalroute. Der kurze D-Überhang kann umgangen werden. Die
+                linke Variante enthält eine E-Passage und ist nicht für Kinder
                 geeignet.
               </p>
             </div>
@@ -234,7 +234,7 @@ export default function Home() {
             target="_blank"
             rel="noreferrer"
           >
-            Aktuelle Tourinfo â†—
+            Aktuelle Tourinfo ↗
           </a>
         </div>
       </section>
@@ -244,15 +244,15 @@ export default function Home() {
           <p className="eyebrow">Kernoption 2</p>
           <h2>Stuibenfall</h2>
           <p className="lead">
-            Die spektakulÃ¤rste Familienoption: viel B-GelÃ¤nde, zwei kurze
+            Die spektakulärste Familienoption: viel B-Gelände, zwei kurze
             C-Stellen und Wasserfall-Panorama.
           </p>
         </div>
         <Stats
           items={[
             ["Schwierigkeit", "C, meist B"],
-            ["Gesamtzeit", "ca. 3,5â€“4 h"],
-            ["KletterlÃ¤nge", "ca. 450 m"],
+            ["Gesamtzeit", "ca. 3,5–4 h"],
+            ["Kletterlänge", "ca. 450 m"],
             ["Voraussetzung", "mind. 1,40 m"],
           ]}
         />
@@ -267,14 +267,14 @@ export default function Home() {
           <article>
             <h3>Tagesstrategie</h3>
             <p>
-              FrÃ¼h starten. Die Drahtseilquerung am Ende nur angehen, wenn alle
-              konzentriert sind â€“ sie kann leicht umgangen werden.
+              Früh starten. Die Drahtseilquerung am Ende nur angehen, wenn alle
+              konzentriert sind – sie kann leicht umgangen werden.
             </p>
           </article>
           <article className="callout">
             <h3>Kinder-Sicherung</h3>
             <p>
-              FÃ¼r Kinder ab etwa 10 Jahren und 1,40 m wird eine zusÃ¤tzliche
+              Für Kinder ab etwa 10 Jahren und 1,40 m wird eine zusätzliche
               Seilsicherung empfohlen.
             </p>
           </article>
@@ -285,7 +285,7 @@ export default function Home() {
           target="_blank"
           rel="noreferrer"
         >
-          Aktuelle Tourinfo â†—
+          Aktuelle Tourinfo ↗
         </a>
       </section>
 
@@ -296,13 +296,13 @@ export default function Home() {
             <h2>Reinhard-Schiestl</h2>
             <p>
               Fast senkrechter Granit, C/D am Einstieg und eine D-Steilstufe:
-              Armkraft und sehr gute Technik sind nÃ¶tig. Nicht als Standardtour
-              fÃ¼r zwei 11-JÃ¤hrige planen.
+              Armkraft und sehr gute Technik sind nötig. Nicht als Standardtour
+              für zwei 11-Jährige planen.
             </p>
             <Stats
               items={[
-                ["Gesamtzeit", "2,5â€“3 h"],
-                ["WandhÃ¶he", "ca. 200 hm"],
+                ["Gesamtzeit", "2,5–3 h"],
+                ["Wandhöhe", "ca. 200 hm"],
               ]}
             />
             <a
@@ -311,19 +311,19 @@ export default function Home() {
               target="_blank"
               rel="noreferrer"
             >
-              Offizielle Tourinfo â†—
+              Offizielle Tourinfo ↗
             </a>
           </article>
           <article className="rest-card">
             <p className="eyebrow">Erholung</p>
             <h2>Gaislachkogl & Tal</h2>
             <p>
-              Hochgebirge ohne Kletterdruck: ausschlafen, eine kurze HÃ¶henrunde,
-              frÃ¼h zurÃ¼ck ins Tal â€“ oder gleich Bad, Museum und Spaziergang.
+              Hochgebirge ohne Kletterdruck: ausschlafen, eine kurze Höhenrunde,
+              früh zurück ins Tal – oder gleich Bad, Museum und Spaziergang.
             </p>
             <strong>Faustregel</strong>
             <p>
-              Nach zwei fordernden Tagen folgt ein leichter Tag â€“ unabhÃ¤ngig
+              Nach zwei fordernden Tagen folgt ein leichter Tag – unabhängig
               davon, wie gut die Wetter-App aussieht.
             </p>
           </article>
@@ -333,31 +333,31 @@ export default function Home() {
       <section id="transfer" className="section transfer">
         <SectionHead
           kicker="Transfertag"
-          title="Ãœber den Pass, an den Fels, zum Eis"
-          copy="Der Weg von SÃ¶lden nach Pozza di Fassa wird selbst zum Reisetag â€“ ohne Zeitdruck und mit einer klaren leichten Variante."
+          title="Über den Pass, an den Fels, zum Eis"
+          copy="Der Weg von Sölden nach Pozza di Fassa wird selbst zum Reisetag – ohne Zeitdruck und mit einer klaren leichten Variante."
         />
         <div className="transfer-steps">
           <article>
             <span>01</span>
             <h3>Timmelsjoch</h3>
-            <p>Landschaftspause statt bloÃŸer Durchfahrt. StraÃŸenstatus am Vorabend prÃ¼fen.</p>
+            <p>Landschaftspause statt bloßer Durchfahrt. Straßenstatus am Vorabend prüfen.</p>
           </article>
           <article>
             <span>02</span>
             <h3>Stuller Wasserfall</h3>
-            <p>Nur mit sauberer Variantenwahl, genÃ¼gend Zeit und idealerweise gefÃ¼hrt.</p>
+            <p>Nur mit sauberer Variantenwahl, genügend Zeit und idealerweise geführt.</p>
           </article>
           <article>
             <span>03</span>
             <h3>Meran</h3>
-            <p>Altstadtbummel unter den Lauben â€“ und das versprochene Eis.</p>
+            <p>Altstadtbummel unter den Lauben – und das versprochene Eis.</p>
           </article>
         </div>
         <div className="wide-callout">
           <strong>Klare Empfehlung</strong>
           <p>
             Den Stuller Wasserfall nicht als schnellen Zwischenstopp
-            unterschÃ¤tzen. Wenn Zeit oder Kraft nicht passen: Moos kurz ansehen
+            unterschätzen. Wenn Zeit oder Kraft nicht passen: Moos kurz ansehen
             und direkt zum entspannten Teil nach Meran.
           </p>
         </div>
@@ -367,7 +367,7 @@ export default function Home() {
         <div className="section">
           <div className="chapter-grid">
             <SectionHead
-              kicker="Woche 2 Â· Dolomiten"
+              kicker="Woche 2 · Dolomiten"
               title="Gratwege, Geschichte und Ruhe"
               copy="Technisch oft moderat, insgesamt aber lang, hoch und exponiert. Roda di Vael ist der beste Einstieg."
             />
@@ -382,20 +382,20 @@ export default function Home() {
             src="/bergabenteuer/images/roda-di-vael.jpg"
             alt="Rotwand und Roda di Vael im Rosengarten"
           />
-          <span>Foto: Maurizio Ceol Â· CC BY 3.0</span>
+          <span>Foto: Maurizio Ceol · CC BY 3.0</span>
         </div>
         <div className="tour-copy">
           <p className="eyebrow">Kernoption 1</p>
-          <h2>Roda di Vael Ã¼ber Vajolon</h2>
+          <h2>Roda di Vael über Vajolon</h2>
           <p className="lead">
             Technisch relativ leicht. Der Anspruch entsteht durch langen
-            Zustieg, HÃ¶he und den gesamten Rundweg.
+            Zustieg, Höhe und den gesamten Rundweg.
           </p>
           <Stats
             items={[
               ["Ferrata", "A/B"],
               ["Kletterzeit", "ca. 1,5 h"],
-              ["Gesamttour", "ca. 4,5â€“6 h"],
+              ["Gesamttour", "ca. 4,5–6 h"],
               ["Gipfel", "2.806 m"],
             ]}
           />
@@ -412,8 +412,8 @@ export default function Home() {
           <div className="callout">
             <strong>Familien-Tipp</strong>
             <p>
-              Mit der Paolina-Bahn den Zustieg verkÃ¼rzen. Am Vajolon-Pass
-              ehrlich prÃ¼fen, ob alle konzentriert und wetterfest sind.
+              Mit der Paolina-Bahn den Zustieg verkürzen. Am Vajolon-Pass
+              ehrlich prüfen, ob alle konzentriert und wetterfest sind.
             </p>
           </div>
         </div>
@@ -425,10 +425,10 @@ export default function Home() {
             src="/bergabenteuer/images/bepi-zac.jpg"
             alt="Felsfenster an der Alta Via Bepi Zac"
           />
-          <span>Foto: Maurizio Ceol Â· CC BY 3.0</span>
+          <span>Foto: Maurizio Ceol · CC BY 3.0</span>
         </div>
         <div className="tour-copy">
-          <p className="eyebrow">Kernoption 2 Â· lang</p>
+          <p className="eyebrow">Kernoption 2 · lang</p>
           <h2>Alta Via Bepi Zac</h2>
           <p className="lead">
             Technisch oft moderat, aber lang, exponiert und historisch
@@ -446,15 +446,15 @@ export default function Home() {
             <div>
               <h3>Offenes Geschichtsbuch</h3>
               <p>
-                Stellungen, LaufgrÃ¤ben, Galerien und Felsfenster begleiten den
-                Grat. Eine Stirnlampe gehÃ¶rt in jeden Rucksack.
+                Stellungen, Laufgräben, Galerien und Felsfenster begleiten den
+                Grat. Eine Stirnlampe gehört in jeden Rucksack.
               </p>
             </div>
             <div>
               <h3>Familienvariante</h3>
               <p>
-                Nicht zwingend die vollstÃ¤ndige Ãœberschreitung planen. Die erste
-                HÃ¤lfte bis zu einem sinnvollen Ausstieg kann die bessere Tour
+                Nicht zwingend die vollständige Überschreitung planen. Die erste
+                Hälfte bis zu einem sinnvollen Ausstieg kann die bessere Tour
                 sein.
               </p>
             </div>
@@ -475,13 +475,13 @@ export default function Home() {
             src="/bergabenteuer/images/santnerpass.jpg"
             alt="Felslandschaft am Santnerpass"
           />
-          <span>Foto: Anna Marchenkova Â· CC BY-SA 4.0</span>
+          <span>Foto: Anna Marchenkova · CC BY-SA 4.0</span>
         </div>
         <div className="tour-copy">
           <p className="eyebrow">Anspruchsvolle Reserve</p>
           <h2>Santnerpass</h2>
           <p className="lead">
-            Ein berÃ¼hmter Klassiker mit nur teilweise gesicherten Passagen und
+            Ein berühmter Klassiker mit nur teilweise gesicherten Passagen und
             alpinem Gesamtcharakter.
           </p>
           <Stats
@@ -493,15 +493,15 @@ export default function Home() {
             ]}
           />
           <p>
-            Der Steig selbst ist relativ kurz. Die Rundtour enthÃ¤lt jedoch viele
-            ungesicherte Passagen im leichten KlettergelÃ¤nde; die Eisrinne kann
-            selbst im Sommer hart gefroren oder mit Altschnee gefÃ¼llt sein.
+            Der Steig selbst ist relativ kurz. Die Rundtour enthält jedoch viele
+            ungesicherte Passagen im leichten Klettergelände; die Eisrinne kann
+            selbst im Sommer hart gefroren oder mit Altschnee gefüllt sein.
           </p>
           <div className="callout">
             <strong>Entscheidung</strong>
             <p>
-              Mit zwei 11-JÃ¤hrigen nur nach lokaler Beratung und idealerweise
-              gefÃ¼hrt. Eine HÃ¼ttenwanderung im Vajolet-Gebiet ist eine
+              Mit zwei 11-Jährigen nur nach lokaler Beratung und idealerweise
+              geführt. Eine Hüttenwanderung im Vajolet-Gebiet ist eine
               vollwertige Alternative.
             </p>
           </div>
@@ -511,7 +511,7 @@ export default function Home() {
       <section className="valley">
         <div className="section valley-inner">
           <p className="eyebrow light">Ruhetag</p>
-          <h2>Val San NicolÃ²</h2>
+          <h2>Val San Nicolò</h2>
           <p className="lead">Der Tag, an dem niemand etwas beweisen muss.</p>
           <div className="valley-options">
             <article>
@@ -520,11 +520,11 @@ export default function Home() {
             </article>
             <article>
               <span>Mittel</span>
-              <p>Picknick und eine HÃ¼tte als Wendepunkt.</p>
+              <p>Picknick und eine Hütte als Wendepunkt.</p>
             </article>
             <article>
               <span>Lang</span>
-              <p>Nur wenn alle erholt sind â€“ weiterhin ohne Klettersteig-Ziel.</p>
+              <p>Nur wenn alle erholt sind – weiterhin ohne Klettersteig-Ziel.</p>
             </article>
           </div>
         </div>
@@ -532,23 +532,23 @@ export default function Home() {
 
       <section id="rueckreise" className="section return">
         <SectionHead
-          kicker="RÃ¼ckreise Â· Nauders"
+          kicker="Rückreise · Nauders"
           title="Goldgrat oder See?"
-          copy="Beides ist ein guter Abschluss â€“ nur fÃ¼r unterschiedliche Energiereserven."
+          copy="Beides ist ein guter Abschluss – nur für unterschiedliche Energiereserven."
         />
         <div className="return-grid">
           <article className="active-card">
             <p className="eyebrow light">Aktiv</p>
             <h3>Goldgrat Nauders</h3>
             <p>
-              Vier Sektionen, zwei AusstiegsmÃ¶glichkeiten, Ã¼berwiegend A/B mit
-              einzelnen C-Stellen. VollstÃ¤ndig dennoch ein langer
+              Vier Sektionen, zwei Ausstiegsmöglichkeiten, überwiegend A/B mit
+              einzelnen C-Stellen. Vollständig dennoch ein langer
               Hochgebirgstag.
             </p>
             <Stats
               items={[
                 ["Kletterzeit", "ca. 3 h"],
-                ["Gesamttour", "ca. 6â€“7 h"],
+                ["Gesamttour", "ca. 6–7 h"],
               ]}
             />
             <a
@@ -557,7 +557,7 @@ export default function Home() {
               target="_blank"
               rel="noreferrer"
             >
-              Offizielle Tourinfo â†—
+              Offizielle Tourinfo ↗
             </a>
           </article>
           <article className="lake-card">
@@ -580,12 +580,12 @@ export default function Home() {
           <SectionHead
             kicker="Vor jedem Start"
             title="Sicher klettern, entspannt bleiben"
-            copy="Die wichtigste AusrÃ¼stung ist ein Plan, der jederzeit kleiner werden darf. Alle vier mÃ¼ssen am Morgen klar Ja sagen kÃ¶nnen."
+            copy="Die wichtigste Ausrüstung ist ein Plan, der jederzeit kleiner werden darf. Alle vier müssen am Morgen klar Ja sagen können."
           />
           <div className="check-grid">
             {checklist.map(([title, copy]) => (
               <article key={title}>
-                <span aria-hidden="true">âœ“</span>
+                <span aria-hidden="true">✓</span>
                 <div>
                   <h3>{title}</h3>
                   <p>{copy}</p>
@@ -604,7 +604,7 @@ export default function Home() {
             <div className="emergency">
               <strong>Notruf</strong>
               <b>112</b>
-              <p>Europaweit Â· In Ã–sterreich zusÃ¤tzlich Alpinnotruf 140</p>
+              <p>Europaweit · In Österreich zusätzlich Alpinnotruf 140</p>
             </div>
           </div>
         </div>
@@ -615,8 +615,8 @@ export default function Home() {
           <p className="eyebrow">Dokumentation</p>
           <h2>Quellen & Bildnachweise</h2>
           <p>
-            Tourendaten wurden fÃ¼r diese Fassung am 29. Juli 2026 geprÃ¼ft.
-            Ã–ffnungen, Sicherungen, Seilbahnbetrieb und Wege kÃ¶nnen sich Ã¤ndern.
+            Tourendaten wurden für diese Fassung am 29. Juli 2026 geprüft.
+            Öffnungen, Sicherungen, Seilbahnbetrieb und Wege können sich ändern.
           </p>
         </div>
         <details>
@@ -625,9 +625,9 @@ export default function Home() {
             <div>
               <h3>Tourenquellen</h3>
               <ul>
-                <li>Ã–tztal Tourismus: Lehner Wasserfall, Stuibenfall, Reinhard-Schiestl</li>
-                <li>SÃ¼dtirol Tourismus / Gemeinde Moos: Stuller Wasserfall</li>
-                <li>Timmelsjoch HochalpenstraÃŸe: StraÃŸenstatus und Ã–ffnungszeiten</li>
+                <li>Ötztal Tourismus: Lehner Wasserfall, Stuibenfall, Reinhard-Schiestl</li>
+                <li>Südtirol Tourismus / Gemeinde Moos: Stuller Wasserfall</li>
+                <li>Timmelsjoch Hochalpenstraße: Straßenstatus und Öffnungszeiten</li>
                 <li>Val di Fassa / Rosengarten: Roda di Vael und Santnerpass</li>
                 <li>Ferrate365: Alta Via Bepi Zac</li>
                 <li>Nauders Tourismus: Goldgrat</li>
@@ -636,10 +636,10 @@ export default function Home() {
             <div>
               <h3>Verwendete Bilder</h3>
               <ul>
-                <li>Lehner Wasserfall â€“ Fuchs Robert â€“ CC BY 3.0</li>
-                <li>Rotwand / Roda di Vael â€“ Maurizio Ceol â€“ CC BY 3.0</li>
-                <li>Bepi Zac, Felsfenster â€“ Maurizio Ceol â€“ CC BY 3.0</li>
-                <li>Santnerpass â€“ Anna Marchenkova â€“ CC BY-SA 4.0</li>
+                <li>Lehner Wasserfall – Fuchs Robert – CC BY 3.0</li>
+                <li>Rotwand / Roda di Vael – Maurizio Ceol – CC BY 3.0</li>
+                <li>Bepi Zac, Felsfenster – Maurizio Ceol – CC BY 3.0</li>
+                <li>Santnerpass – Anna Marchenkova – CC BY-SA 4.0</li>
               </ul>
             </div>
           </div>
@@ -648,8 +648,8 @@ export default function Home() {
           <strong>Wichtiger Hinweis</strong>
           <p>
             Dieses Projekt ersetzt keine aktuelle Zustandsmeldung, Topo oder
-            lokale Beratung. FÃ¼r Kinder zÃ¤hlen nicht nur Alter, sondern auch
-            KÃ¶rpergrÃ¶ÃŸe, Erfahrung, Reichweite, Kraft und Tagesform.
+            lokale Beratung. Für Kinder zählen nicht nur Alter, sondern auch
+            Körpergröße, Erfahrung, Reichweite, Kraft und Tagesform.
           </p>
         </div>
       </section>
@@ -660,7 +660,7 @@ export default function Home() {
             <MountainMark />
             <span>Unsere Bergabenteuer</span>
           </div>
-          <p>Band 1 Â· Ã–tztal & Dolomiten Â· 2026</p>
+          <p>Band 1 · Ötztal & Dolomiten · 2026</p>
           <a
             href="/bergabenteuer/downloads/Unsere_Bergabenteuer_Band1_Oetztal_Dolomiten_2026_V2.pdf"
             download

@@ -9,6 +9,7 @@
     "not_found_handling": "single-page-application"
   },
   "routes": [
+    { "pattern": "apps.larsfricke.com/app1", "custom_domain": false },
     { "pattern": "apps.larsfricke.com/app1/*", "custom_domain": false }
   ]
 }

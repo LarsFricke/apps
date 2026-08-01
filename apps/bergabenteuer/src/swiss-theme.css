@@ -1,0 +1,540 @@
+/* ═══════════════════════════════════════════════════════
+   Swiss Alpine Theme — Unsere Bergabenteuer
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Palette ────────────────────────────────────────── */
+
+body.theme-swiss {
+  --paper: #fafafa;
+  --white: #ffffff;
+  --ink: #1a1a1a;
+  --muted: #707070;
+  --navy: #1a1a1a;
+  --blue: #5a8a9e;
+  --blue-soft: #eef4f6;
+  --green: #5a8a6e;
+  --green-dark: #2a3a2e;
+  --green-soft: #eaf0ec;
+  --orange: #e05a30;
+  --orange-text: #c44a24;
+  --sand: #f0ece6;
+  --line: rgba(26, 26, 26, 0.1);
+  --serif: "Georgia", "Times New Roman", serif;
+}
+
+/* ── Typography: clean geometric ────────────────────── */
+
+body.theme-swiss {
+  font-family: "Inter", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  background: var(--white);
+  color: var(--ink);
+  font-weight: 360;
+}
+
+body.theme-swiss h1,
+body.theme-swiss h2 {
+  font-family: "Inter", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-weight: 280;
+  letter-spacing: -0.045em;
+}
+
+body.theme-swiss h2 {
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  line-height: 1.05;
+}
+
+body.theme-swiss h3 {
+  font-family: "Inter", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-weight: 420;
+}
+
+body.theme-swiss .eyebrow {
+  font-family: "Inter", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  font-size: 0.65rem;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+body.theme-swiss .lead {
+  font-family: "Inter", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-weight: 340;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+body.theme-swiss blockquote {
+  border-left: 2px solid var(--ink);
+  font-family: "Inter", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-weight: 320;
+  font-size: clamp(1.15rem, 2vw, 1.6rem);
+  line-height: 1.4;
+  color: var(--muted);
+  font-style: normal;
+}
+
+/* ── Sections: heavy whitespace ─────────────────────── */
+
+body.theme-swiss .section {
+  padding: 140px 0;
+}
+
+body.theme-swiss .section-head > p:last-child {
+  color: var(--muted);
+  font-weight: 360;
+}
+
+/* ── Topbar: minimal stripe ─────────────────────────── */
+
+body.theme-swiss .topbar {
+  background: rgba(250, 250, 250, 0.96);
+  border-bottom: 1px solid var(--line);
+  min-height: 60px;
+}
+
+body.theme-swiss .brand {
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+}
+
+body.theme-swiss .progress-bar {
+  height: 1px;
+  background: var(--orange);
+}
+
+/* ── Hero: full-bleed drama ─────────────────────────── */
+
+body.theme-swiss .hero {
+  min-height: 100vh;
+}
+
+body.theme-swiss .hero-shade {
+  background:
+    linear-gradient(180deg, rgba(10, 10, 10, 0.55) 0%, rgba(10, 10, 10, 0) 38%),
+    linear-gradient(0deg, rgba(10, 10, 10, 0.7), transparent 48%);
+}
+
+body.theme-swiss .hero-content {
+  padding: 200px 0 100px;
+}
+
+body.theme-swiss .hero h1 {
+  font-weight: 260;
+  letter-spacing: -0.05em;
+  font-size: clamp(3.5rem, 9vw, 7.5rem);
+  line-height: 0.9;
+}
+
+body.theme-swiss .hero-sub {
+  font-family: "Inter", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-weight: 320;
+  letter-spacing: -0.02em;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  color: rgba(255, 255, 255, 0.82);
+}
+
+body.theme-swiss .hero-meta {
+  font-family: "Inter", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-weight: 360;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+body.theme-swiss .download {
+  background: var(--orange);
+  font-family: "Inter", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+}
+
+body.theme-swiss .text-link {
+  font-family: "Inter", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+}
+
+/* ── Chapter: stark dark slabs ──────────────────────── */
+
+body.theme-swiss .chapter-blue {
+  background-color: #1a1a1a;
+}
+
+body.theme-swiss .chapter-green {
+  background-color: #1a1a1a;
+}
+
+body.theme-swiss .chapter .eyebrow {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+body.theme-swiss .chapter .section-head > p:last-child {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 340;
+}
+
+/* ── Route timeline: clean markers ──────────────────── */
+
+body.theme-swiss .route-line::before {
+  background: var(--line);
+  height: 1px;
+}
+
+body.theme-swiss .route-number {
+  background: var(--ink);
+  border-radius: 2px;
+  width: 36px;
+  height: 36px;
+  font-family: "Inter", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-weight: 500;
+}
+
+body.theme-swiss .route-line p {
+  color: var(--muted);
+  font-family: "Inter", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+}
+
+body.theme-swiss .route-line h3 {
+  font-family: "Inter", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+/* ── Tour sections: frameless images ────────────────── */
+
+body.theme-swiss .tour-image {
+  min-height: 620px;
+  background: transparent;
+}
+
+body.theme-swiss .tour-image img {
+  object-position: center;
+}
+
+body.theme-swiss .tour-image span {
+  background: rgba(0, 0, 0, 0.6);
+  font-family: "Inter", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.04em;
+}
+
+/* ── Stats: data grid ───────────────────────────────── */
+
+body.theme-swiss .stats {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+body.theme-swiss .stats div + div {
+  border-left: 1px solid var(--line);
+}
+
+body.theme-swiss .stats dt {
+  color: var(--muted);
+  font-family: "Inter", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+}
+
+body.theme-swiss .stats dd {
+  font-family: "Inter", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-weight: 450;
+}
+
+body.theme-swiss .copy-columns p,
+body.theme-swiss .compact-cards p {
+  color: var(--muted);
+  font-family: "Inter", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-weight: 360;
+}
+
+/* ── Callouts: clean blocks ─────────────────────────── */
+
+body.theme-swiss .callout {
+  background: var(--blue-soft);
+}
+
+body.theme-swiss .callout.danger {
+  background: #f8f0eb;
+  border-left: 2px solid var(--orange-text);
+}
+
+body.theme-swiss .principle,
+body.theme-swiss .wide-callout,
+body.theme-swiss .legal-note {
+  background: var(--sand);
+}
+
+body.theme-swiss .compact-cards article {
+  border: 1px solid var(--line);
+  background: var(--white);
+}
+
+/* ── Transfer steps ─────────────────────────────────── */
+
+body.theme-swiss .transfer-steps {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+body.theme-swiss .transfer-steps span {
+  color: var(--orange-text);
+  font-family: "Inter", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+}
+
+body.theme-swiss .transfer-steps h3 {
+  font-family: "Inter", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-weight: 480;
+}
+
+body.theme-swiss .transfer-steps p {
+  font-family: "Inter", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+}
+
+/* ── Sequence: clean steps ──────────────────────────── */
+
+body.theme-swiss .sequence b {
+  border-color: var(--ink);
+  color: var(--ink);
+  border-radius: 2px;
+  font-family: "Inter", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-weight: 500;
+}
+
+/* ── Valley ──────────────────────────────────────────── */
+
+body.theme-swiss .valley {
+  background-image: none;
+  background-color: #1a1a1a;
+}
+
+body.theme-swiss .valley .lead {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 340;
+}
+
+body.theme-swiss .valley-options article {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+body.theme-swiss .valley-options span {
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "Inter", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+}
+
+/* ── Split band ─────────────────────────────────────── */
+
+body.theme-swiss .split-band {
+  background: #1a1a1a;
+}
+
+body.theme-swiss .split-band .stats,
+body.theme-swiss .split-band .stats div + div {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+body.theme-swiss .split-band .stats dt,
+body.theme-swiss .split-band p {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+body.theme-swiss .split-band .rest-card {
+  background: var(--green-dark);
+}
+
+body.theme-swiss .split-band .rest-card p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* ── Return grid ────────────────────────────────────── */
+
+body.theme-swiss .active-card {
+  background: var(--ink);
+}
+
+body.theme-swiss .active-card > p:not(.eyebrow),
+body.theme-swiss .active-card .stats dt {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+body.theme-swiss .active-card .stats,
+body.theme-swiss .active-card .stats div + div {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+body.theme-swiss .lake-card {
+  background: var(--sand);
+}
+
+body.theme-swiss .lake-card > p:not(.eyebrow) {
+  color: var(--muted);
+}
+
+body.theme-swiss .lake-card blockquote {
+  color: var(--muted);
+  border-color: var(--line);
+}
+
+body.theme-swiss .return-grid h3 {
+  font-weight: 450;
+  font-size: 2rem;
+}
+
+/* ── Practice ───────────────────────────────────────── */
+
+body.theme-swiss .check-grid article > span {
+  background: var(--green-soft);
+  color: var(--green-dark);
+  font-family: "Inter", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+}
+
+body.theme-swiss .tags span {
+  background: var(--white);
+  border: 1px solid var(--line);
+  font-family: "Inter", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-weight: 500;
+}
+
+body.theme-swiss .emergency {
+  background: var(--orange);
+}
+
+body.theme-swiss .emergency b {
+  font-family: "Inter", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-weight: 280;
+}
+
+/* ── Sources ────────────────────────────────────────── */
+
+body.theme-swiss details {
+  border-top-color: var(--line);
+}
+
+body.theme-swiss .source-columns li {
+  color: var(--muted);
+}
+
+/* ── Footer ─────────────────────────────────────────── */
+
+body.theme-swiss footer {
+  background: var(--ink);
+}
+
+body.theme-swiss .footer-inner p {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ── Comparison table ───────────────────────────────── */
+
+body.theme-swiss .compare {
+  border-top-color: rgba(255, 255, 255, 0.16);
+}
+
+body.theme-swiss .compare-table th {
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+body.theme-swiss .compare-table td {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+body.theme-swiss .row-reserve td {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* ── Highlights ─────────────────────────────────────── */
+
+body.theme-swiss .highlights > article > span {
+  color: rgba(255, 255, 255, 0.4);
+  font-family: "Inter", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+}
+
+body.theme-swiss .highlights h3 {
+  font-family: "Inter", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-weight: 450;
+}
+
+body.theme-swiss .highlights p {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ── Mobile drawer ──────────────────────────────────── */
+
+body.theme-swiss .mobile-drawer {
+  background: var(--white);
+}
+
+body.theme-swiss .drawer-backdrop {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+body.theme-swiss .mobile-drawer nav a {
+  border-bottom-color: var(--line);
+}
+
+body.theme-swiss .mobile-drawer nav a:first-of-type {
+  border-top-color: var(--line);
+}
+
+/* ── Focus ring ─────────────────────────────────────── */
+
+body.theme-swiss a:focus-visible,
+body.theme-swiss button:focus-visible,
+body.theme-swiss summary:focus-visible {
+  outline-color: var(--ink);
+  outline-width: 1px;
+  outline-offset: 4px;
+}
+
+body.theme-swiss .hamburger:focus-visible,
+body.theme-swiss .drawer-close:focus-visible {
+  outline-color: var(--ink);
+}
+
+/* ── Active nav ─────────────────────────────────────── */
+
+body.theme-swiss .navlinks a.active {
+  color: var(--orange-text);
+}
+
+body.theme-swiss .navlinks a.nav-oetztal.active {
+  color: var(--blue);
+}
+
+body.theme-swiss .navlinks a.nav-dolomiten.active {
+  color: var(--green);
+}
+
+body.theme-swiss .mobile-drawer nav a.active {
+  color: var(--orange-text);
+}
+
+body.theme-swiss .mobile-drawer nav a.nav-oetztal.active {
+  color: var(--blue);
+}
+
+body.theme-swiss .mobile-drawer nav a.nav-dolomiten.active {
+  color: var(--green);
+}
+
+/* ── Photo credit ───────────────────────────────────── */
+
+body.theme-swiss .photo-credit {
+  font-family: "Inter", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-weight: 400;
+}
+
+/* ── Print ──────────────────────────────────────────── */
+
+@media print {
+  body.theme-swiss .chapter,
+  body.theme-swiss .split-band,
+  body.theme-swiss .valley,
+  body.theme-swiss .practice {
+    background-image: none;
+  }
+}

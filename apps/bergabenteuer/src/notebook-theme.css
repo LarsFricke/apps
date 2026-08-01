@@ -1,0 +1,444 @@
+/* ═══════════════════════════════════════════════════════
+   Field Notebook Theme — Unsere Bergabenteuer
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Palette ────────────────────────────────────────── */
+
+body.theme-notebook {
+  --paper: #f7f4eb;
+  --white: #faf9f4;
+  --ink: #1c2a33;
+  --muted: #5a6b74;
+  --navy: #1c2a33;
+  --blue: #3d687a;
+  --blue-soft: #dce6ea;
+  --green: #4a6a52;
+  --green-dark: #2d3e32;
+  --green-soft: #dde5df;
+  --orange: #b85a38;
+  --orange-text: #944428;
+  --sand: #ede5d4;
+  --line: rgba(28, 42, 51, 0.11);
+  --serif: Georgia, "Times New Roman", serif;
+}
+
+/* ── Ruled-paper background ─────────────────────────── */
+
+body.theme-notebook {
+  font-family: "Segoe UI", "Corbel", "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--paper);
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 23px,
+      rgba(28, 42, 51, 0.06) 23.5px,
+      rgba(28, 42, 51, 0.06) 24px
+    );
+  background-attachment: local;
+}
+
+body.theme-notebook h1,
+body.theme-notebook h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: -0.02em;
+}
+
+body.theme-notebook h2 {
+  font-size: clamp(2.2rem, 4.5vw, 4.2rem);
+}
+
+body.theme-notebook h3 {
+  font-family: var(--serif);
+  font-style: italic;
+}
+
+body.theme-notebook .eyebrow {
+  font-family: "Segoe UI", "Corbel", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  font-size: 0.7rem;
+  color: var(--orange-text);
+}
+
+body.theme-notebook .lead {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--muted);
+}
+
+body.theme-notebook blockquote {
+  border-left: 2px solid var(--orange);
+  font-family: var(--serif);
+  font-style: italic;
+  background: linear-gradient(
+    to right,
+    rgba(184, 90, 56, 0.06) 0%,
+    transparent 60%
+  );
+}
+
+/* ── Chapter backgrounds: tinted paper ──────────────── */
+
+body.theme-notebook .chapter,
+body.theme-notebook .split-band,
+body.theme-notebook .valley {
+  background-image: none;
+}
+
+body.theme-notebook .chapter-blue {
+  background-color: #1c2a33;
+}
+
+body.theme-notebook .chapter-green {
+  background-color: #2d3e32;
+}
+
+body.theme-notebook .split-band {
+  background-color: #1c2a33;
+}
+
+body.theme-notebook .practice {
+  background-color: var(--white);
+}
+
+/* ── Topbar: notebook margin ────────────────────────── */
+
+body.theme-notebook .topbar {
+  background: rgba(247, 244, 235, 0.94);
+  border-bottom: 1px solid var(--line);
+  min-height: 64px;
+}
+
+body.theme-notebook .progress-bar {
+  height: 2px;
+  background: var(--orange);
+}
+
+/* ── Hero: journal entry header ─────────────────────── */
+
+body.theme-notebook .hero-shade {
+  background:
+    linear-gradient(135deg, rgba(16, 24, 32, 0.92) 0%, rgba(16, 24, 32, 0.52) 45%, rgba(16, 24, 32, 0.04) 80%),
+    linear-gradient(0deg, rgba(16, 24, 32, 0.64), transparent 52%);
+}
+
+body.theme-notebook .hero-content {
+  padding: 150px 0 72px;
+}
+
+body.theme-notebook .hero h1 {
+  font-family: var(--serif);
+  font-style: italic;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.theme-notebook .hero-sub {
+  font-family: var(--serif);
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+body.theme-notebook .download {
+  background: var(--orange);
+}
+
+/* ── Route timeline: handwritten numbers ────────────── */
+
+body.theme-notebook .route-line::before {
+  background: repeating-linear-gradient(
+    to right,
+    var(--line) 0,
+    var(--line) 2px,
+    transparent 2px,
+    transparent 8px
+  );
+  height: 1px;
+}
+
+body.theme-notebook .route-number {
+  background: var(--ink);
+  border-radius: 50%;
+  font-family: var(--serif);
+  font-style: italic;
+}
+
+body.theme-notebook .route-line p {
+  color: var(--orange-text);
+}
+
+/* ── Sections: torn-page dividers ───────────────────── */
+
+body.theme-notebook .section {
+  border-bottom: 1px solid var(--line);
+}
+
+body.theme-notebook .section:last-of-type,
+body.theme-notebook .chapter .section,
+body.theme-notebook .split-band .section,
+body.theme-notebook .valley .section,
+body.theme-notebook .practice .section,
+body.theme-notebook footer .section {
+  border-bottom: 0;
+}
+
+/* ── Tour sections: polaroid photos ─────────────────── */
+
+body.theme-notebook .tour-image {
+  border: 4px solid var(--white);
+  border-bottom-width: 18px;
+  box-shadow:
+    1px 2px 8px rgba(28, 42, 51, 0.14),
+    0 0 0 1px rgba(28, 42, 51, 0.06);
+  background: var(--white);
+}
+
+body.theme-notebook .tour-image span {
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.6rem;
+  right: 8px;
+  bottom: 4px;
+}
+
+/* ── Stats: journal data ────────────────────────────── */
+
+body.theme-notebook .stats {
+  border-top: 2px solid var(--orange);
+  border-bottom: 1px solid var(--line);
+}
+
+body.theme-notebook .stats dt {
+  color: var(--orange-text);
+}
+
+body.theme-notebook .stats dd {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* ── Callouts: margin notes ─────────────────────────── */
+
+body.theme-notebook .callout {
+  background: linear-gradient(
+    135deg,
+    var(--blue-soft) 0%,
+    rgba(220, 230, 234, 0.4) 100%
+  );
+}
+
+body.theme-notebook .callout.danger {
+  background: #f2e3da;
+  border-left: 3px solid var(--orange-text);
+}
+
+body.theme-notebook .principle,
+body.theme-notebook .wide-callout,
+body.theme-notebook .legal-note {
+  background: linear-gradient(
+    to right,
+    var(--sand) 0%,
+    rgba(237, 229, 212, 0.5) 100%
+  );
+}
+
+body.theme-notebook .compact-cards article {
+  border: 1px solid var(--line);
+  background: var(--white);
+}
+
+/* ── Transfer steps ─────────────────────────────────── */
+
+body.theme-notebook .transfer-steps {
+  border-top: 2px solid var(--orange);
+  border-bottom: 1px solid var(--line);
+}
+
+body.theme-notebook .transfer-steps span {
+  color: var(--orange-text);
+}
+
+/* ── Sequence: journal steps ────────────────────────── */
+
+body.theme-notebook .sequence span::after {
+  background: repeating-linear-gradient(
+    to right,
+    var(--line) 0,
+    var(--line) 1px,
+    transparent 1px,
+    transparent 5px
+  );
+}
+
+body.theme-notebook .sequence b {
+  border-color: var(--orange);
+  color: var(--orange);
+  font-family: var(--serif);
+  font-style: italic;
+}
+
+/* ── Valley: rest entry ─────────────────────────────── */
+
+body.theme-notebook .valley {
+  background-image: none;
+  background-color: var(--green-dark);
+}
+
+body.theme-notebook .valley .lead {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+body.theme-notebook .valley-options article {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+body.theme-notebook .valley-options span {
+  color: #cce0cc;
+  font-family: "Segoe UI", "Corbel", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ── Return grid ────────────────────────────────────── */
+
+body.theme-notebook .active-card {
+  background: var(--ink);
+}
+
+body.theme-notebook .active-card .stats,
+body.theme-notebook .active-card .stats div + div {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+body.theme-notebook .lake-card {
+  background: var(--blue-soft);
+}
+
+body.theme-notebook .lake-card blockquote {
+  background: transparent;
+}
+
+/* ── Practice: checklist page ───────────────────────── */
+
+body.theme-notebook .check-grid article > span {
+  font-family: var(--serif);
+  font-style: italic;
+}
+
+body.theme-notebook .tags span {
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+
+/* ── Emergency ──────────────────────────────────────── */
+
+body.theme-notebook .emergency b {
+  font-family: var(--serif);
+  font-style: italic;
+}
+
+/* ── Sources: appendix ──────────────────────────────── */
+
+body.theme-notebook details {
+  border-top-color: var(--line);
+}
+
+/* ── Footer ─────────────────────────────────────────── */
+
+body.theme-notebook footer {
+  background: var(--ink);
+}
+
+/* ── Mobile drawer ──────────────────────────────────── */
+
+body.theme-notebook .mobile-drawer {
+  background: var(--paper);
+}
+
+body.theme-notebook .drawer-backdrop {
+  background: rgba(16, 24, 32, 0.5);
+}
+
+body.theme-notebook .mobile-drawer nav a {
+  border-bottom-color: var(--line);
+}
+
+body.theme-notebook .mobile-drawer nav a:first-of-type {
+  border-top-color: var(--line);
+}
+
+/* ── Comparison table ───────────────────────────────── */
+
+body.theme-notebook .compare {
+  border-top-color: rgba(255, 255, 255, 0.16);
+}
+
+body.theme-notebook .compare-table td {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+body.theme-notebook .row-reserve td {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ── Focus ring ─────────────────────────────────────── */
+
+body.theme-notebook a:focus-visible,
+body.theme-notebook button:focus-visible,
+body.theme-notebook summary:focus-visible {
+  outline-color: var(--orange);
+}
+
+/* ── Active nav ─────────────────────────────────────── */
+
+body.theme-notebook .navlinks a.active {
+  color: var(--orange-text);
+}
+
+body.theme-notebook .navlinks a.nav-oetztal.active {
+  color: var(--blue);
+}
+
+body.theme-notebook .navlinks a.nav-dolomiten.active {
+  color: var(--green);
+}
+
+body.theme-notebook .mobile-drawer nav a.active {
+  color: var(--orange-text);
+}
+
+body.theme-notebook .mobile-drawer nav a.nav-oetztal.active {
+  color: var(--blue);
+}
+
+body.theme-notebook .mobile-drawer nav a.nav-dolomiten.active {
+  color: var(--green);
+}
+
+/* ── Highlights ─────────────────────────────────────── */
+
+body.theme-notebook .highlights > article > span {
+  color: #b8d0d6;
+  font-family: "Segoe UI", "Corbel", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ── Focus ──────────────────────────────────────────── */
+
+body.theme-notebook .hamburger:focus-visible,
+body.theme-notebook .drawer-close:focus-visible {
+  outline-color: var(--orange);
+}
+
+/* ── Print ──────────────────────────────────────────── */
+
+@media print {
+  body.theme-notebook {
+    background-image: none;
+  }
+
+  body.theme-notebook .tour-image {
+    border: 1px solid #ccc;
+    box-shadow: none;
+  }
+}

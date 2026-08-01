@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./topo-theme.css";
+import "./notebook-theme.css";
+import "./swiss-theme.css";
 
 const topbarLinks = [
   { href: "#route", label: "Route" },
@@ -162,20 +164,39 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [isTopo, setIsTopo] = useState(() => {
+  const themes = ["topo", "notebook", "swiss"] as const;
+  const themeLabels: Record<string, string> = {
+    topo: "Karte",
+    notebook: "Notizbuch",
+    swiss: "Swiss",
+  };
+  const [theme, setTheme] = useState<string | null>(() => {
     if (typeof window !== "undefined") {
-      return document.body.classList.contains("theme-topo");
+      for (const t of themes) {
+        if (document.body.classList.contains(`theme-${t}`)) return t;
+      }
     }
-    return false;
+    return null;
   });
   const hamburgerRef = useRef<HTMLButtonElement>(null);
   const drawerRef = useRef<HTMLDivElement>(null);
   const closeBtnRef = useRef<HTMLButtonElement>(null);
 
   const toggleTheme = () => {
-    const next = !isTopo;
-    setIsTopo(next);
-    document.body.classList.toggle("theme-topo", next);
+    const currentIdx = theme ? themes.indexOf(theme as typeof themes[number]) : -1;
+    const nextIdx = (currentIdx + 1) % (themes.length + 1);
+
+    if (theme) {
+      document.body.classList.remove(`theme-${theme}`);
+    }
+
+    if (nextIdx < themes.length) {
+      const next = themes[nextIdx];
+      document.body.classList.add(`theme-${next}`);
+      setTheme(next);
+    } else {
+      setTheme(null);
+    }
   };
 
   useEffect(() => {
@@ -937,8 +958,8 @@ export default function Home() {
           >
             PDF herunterladen
           </a>
-          <button className="theme-toggle" onClick={toggleTheme} aria-pressed={isTopo}>
-            {isTopo ? "Karte" : "Feldbuch"}
+          <button className="theme-toggle" onClick={toggleTheme} aria-pressed={!!theme}>
+            {theme ? themeLabels[theme] : "Feldbuch"}
           </button>
         </div>
       </footer>

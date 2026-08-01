@@ -23,6 +23,16 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .progress-bar {
+    transition: none;
+  }
+}
+
 body {
   margin: 0;
   background: var(--paper);
@@ -85,6 +95,7 @@ section[id] {
   background: rgba(245, 243, 237, 0.92);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(14px);
+  overflow: hidden;
 }
 
 .brand {
@@ -134,12 +145,32 @@ section[id] {
 }
 
 .navlinks a,
+.navlinks a:visited,
 .topbar .download {
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.navlinks a.active {
+  color: var(--orange);
+}
+
+.navlinks a {
+  transition: color 0.2s ease;
+}
+
+.progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--orange);
+  transform-origin: left center;
+  transition: transform 0.15s linear;
 }
 
 .topbar > .download {
@@ -228,7 +259,11 @@ section[id] {
   text-decoration: none;
   text-transform: uppercase;
   color: var(--ink);
-  transition: color 0.15s ease;
+  transition: color 0.2s ease;
+}
+
+.mobile-drawer nav a.active {
+  color: var(--orange);
 }
 
 .mobile-drawer nav a:first-of-type {

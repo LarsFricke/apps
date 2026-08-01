@@ -98,6 +98,8 @@ function Highlights({ items }: { items: string[][] }) {
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     if (menuOpen) {
@@ -110,6 +112,44 @@ export default function Home() {
     };
   }, [menuOpen]);
 
+  useEffect(() => {
+    const sections = document.querySelectorAll("section[id]");
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (visible.length > 0) {
+          setActiveSection(visible[0].target.id);
+        }
+      },
+      { rootMargin: "-80px 0px -55% 0px", threshold: 0 },
+    );
+
+    sections.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    let ticking = false;
+    const update = () => {
+      const h = document.documentElement;
+      const max = h.scrollHeight - window.innerHeight;
+      setScrollProgress(max > 0 ? (window.scrollY / max) * 100 : 0);
+      ticking = false;
+    };
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const closeMenu = () => setMenuOpen(false);
 
   return (
@@ -121,7 +161,11 @@ export default function Home() {
         </a>
         <div className="navlinks">
           {topbarLinks.map((link) => (
-            <a key={link.href} href={link.href}>
+            <a
+              key={link.href}
+              href={link.href}
+              className={activeSection === link.href.slice(1) ? "active" : ""}
+            >
               {link.label}
             </a>
           ))}
@@ -143,6 +187,10 @@ export default function Home() {
         >
           PDF
         </a>
+        <div
+          className="progress-bar"
+          style={{ transform: `scaleX(${scrollProgress / 100})` }}
+        />
       </nav>
 
       <div
@@ -176,7 +224,12 @@ export default function Home() {
         </button>
         <nav aria-label="Seitennavigation">
           {topbarLinks.map((link) => (
-            <a key={link.href} href={link.href} onClick={closeMenu}>
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={closeMenu}
+              className={activeSection === link.href.slice(1) ? "active" : ""}
+            >
               {link.label}
             </a>
           ))}

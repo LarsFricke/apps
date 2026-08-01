@@ -1,0 +1,5 @@
+{
+  "$schema": "node_modules/wrangler/package.json",
+  "name": "my-apps",
+  "pages_build_output_dir": "dist"
+}

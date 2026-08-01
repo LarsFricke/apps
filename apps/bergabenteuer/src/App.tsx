@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const topbarLinks = [
   { href: "#route", label: "Route" },
@@ -146,7 +146,7 @@ function ComparisonTable({
                 <td>{t.duration}</td>
                 <td>{t.concern}</td>
                 <td className={`status status-${t.status}`}>
-                  {statusLabel[t.status] ?? t.status}
+                  <span>{statusLabel[t.status] ?? t.status}</span>
                 </td>
               </tr>
             ))}
@@ -161,16 +161,52 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const hamburgerRef = useRef<HTMLButtonElement>(null);
+  const drawerRef = useRef<HTMLDivElement>(null);
+  const closeBtnRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     if (menuOpen) {
       document.body.style.overflow = "hidden";
+      const prevFocus = document.activeElement as HTMLElement | null;
+      requestAnimationFrame(() => closeBtnRef.current?.focus());
+      return () => {
+        document.body.style.overflow = "";
+        prevFocus?.focus();
+      };
     } else {
       document.body.style.overflow = "";
     }
-    return () => {
-      document.body.style.overflow = "";
+  }, [menuOpen]);
+
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && menuOpen) {
+        setMenuOpen(false);
+        return;
+      }
+      if (!menuOpen || e.key !== "Tab") return;
+
+      const drawer = drawerRef.current;
+      if (!drawer) return;
+      const focusable = drawer.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled])',
+      );
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     };
+
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
   }, [menuOpen]);
 
   useEffect(() => {
@@ -221,21 +257,27 @@ export default function Home() {
           <span>Unsere Bergabenteuer</span>
         </a>
         <div className="navlinks">
-          {topbarLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className={`${link.chapter ? `nav-${link.chapter}` : ""}${activeSection === link.href.slice(1) ? " active" : ""}`}
-            >
-              {link.label}
-            </a>
-          ))}
+          {topbarLinks.map((link) => {
+            const isActive = activeSection === link.href.slice(1);
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                className={`${link.chapter ? `nav-${link.chapter}` : ""}${isActive ? " active" : ""}`}
+                aria-current={isActive ? "page" : undefined}
+              >
+                {link.label}
+              </a>
+            );
+          })}
         </div>
         <button
+          ref={hamburgerRef}
           className={`hamburger${menuOpen ? " open" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-expanded={menuOpen}
           aria-label={menuOpen ? "Menü schließen" : "Menü öffnen"}
+          aria-controls="mobile-drawer"
         >
           <span />
           <span />
@@ -259,13 +301,16 @@ export default function Home() {
         onClick={closeMenu}
         aria-hidden="true"
       />
-      <aside
+      <div
+        ref={drawerRef}
+        id="mobile-drawer"
         className={`mobile-drawer${menuOpen ? " open" : ""}`}
         role="dialog"
         aria-modal="true"
         aria-label="Navigation"
       >
         <button
+          ref={closeBtnRef}
           className="drawer-close"
           onClick={closeMenu}
           aria-label="Menü schließen"
@@ -284,18 +329,22 @@ export default function Home() {
           </svg>
         </button>
         <nav aria-label="Seitennavigation">
-          {topbarLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={closeMenu}
-              className={`${link.chapter ? `nav-${link.chapter}` : ""}${activeSection === link.href.slice(1) ? " active" : ""}`}
-            >
-              {link.label}
-            </a>
-          ))}
+          {topbarLinks.map((link) => {
+            const isActive = activeSection === link.href.slice(1);
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={closeMenu}
+                className={`${link.chapter ? `nav-${link.chapter}` : ""}${isActive ? " active" : ""}`}
+                aria-current={isActive ? "page" : undefined}
+              >
+                {link.label}
+              </a>
+            );
+          })}
         </nav>
-      </aside>
+      </div>
 
       <section id="start" className="hero">
         <img

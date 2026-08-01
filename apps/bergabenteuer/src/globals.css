@@ -685,26 +685,31 @@ blockquote {
 .status {
   text-align: right;
   white-space: nowrap;
-  font-size: 0.66rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 600;
 }
 
-.status-empfohlen {
-  color: #9cd49c;
+.status span {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.14);
 }
 
-.status-reserve {
-  color: #f0c090;
+.status-empfohlen span {
+  color: #baf2ba;
 }
 
-.status-ruhetag {
-  color: #90c8f0;
+.status-reserve span {
+  color: #f0d0a0;
 }
 
-.status-mit-Variante {
-  color: #e0cc90;
+.status-ruhetag span {
+  color: #a8d8f8;
+}
+
+.status-mit-Variante span {
+  color: #f0dcb0;
 }
 
 .row-reserve td {
@@ -996,7 +1001,7 @@ blockquote {
   position: relative;
   background:
     linear-gradient(120deg, rgba(31, 66, 53, 0.95), rgba(58, 91, 66, 0.78)),
-    url("/images/roda-di-vael.jpg") center 72% / cover;
+    url("/bergabenteuer/images/roda-di-vael.jpg") center 72% / cover;
   color: white;
 }
 

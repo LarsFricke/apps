@@ -358,7 +358,7 @@ export default function Home() {
             className="text-link"
             href="https://www.oetztal.com/de/aktivitaeten/alle-routen-touren/klettersteig-lehner-wasserfall-laengenfeld.r-19600795"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             Aktuelle Tourinfo ↗
           </a>
@@ -409,7 +409,7 @@ export default function Home() {
           className="text-link"
           href="https://www.oetztal.com/de/regionen-orte/oetztal-a-z/stuibenfall-tirols-groesster-wasserfall.i-2e167aba-7e9a-4900-997c-fb7229210867"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           Aktuelle Tourinfo ↗
         </a>
@@ -435,7 +435,7 @@ export default function Home() {
               className="text-link light"
               href="https://www.oetztal.com/de/aktivitaeten/alle-routen-touren/klettersteig-reinhard-schiestl-laengenfeld.r-19600293"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               Offizielle Tourinfo ↗
             </a>
@@ -681,7 +681,7 @@ export default function Home() {
               className="text-link light"
               href="https://www.nauders.com/en/Your-Nauders/In-Summer/Climbing/Klettersteig-Goldgrat"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               Offizielle Tourinfo ↗
             </a>

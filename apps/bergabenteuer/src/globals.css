@@ -595,6 +595,106 @@ blockquote {
   font-size: 0.86rem;
 }
 
+.compare {
+  margin-top: 36px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.compare summary {
+  padding: 20px 0;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.compare summary::-webkit-details-marker {
+  display: none;
+}
+
+.compare summary::before {
+  content: "+";
+  display: inline-block;
+  width: 18px;
+  margin-right: 10px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.compare[open] summary::before {
+  content: "−";
+}
+
+.compare-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.compare-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.compare-table th {
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  text-align: left;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.compare-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.88);
+  vertical-align: top;
+  line-height: 1.4;
+}
+
+.col-tour {
+  font-family: var(--serif);
+  font-size: 0.92rem;
+  color: white;
+}
+
+.status {
+  text-align: right;
+  white-space: nowrap;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.status-empfohlen {
+  color: #9cd49c;
+}
+
+.status-reserve {
+  color: #f0c090;
+}
+
+.status-ruhetag {
+  color: #90c8f0;
+}
+
+.status-mit-Variante {
+  color: #e0cc90;
+}
+
+.row-reserve td {
+  color: rgba(255, 255, 255, 0.62);
+}
+
 .tour {
   display: grid;
   grid-template-columns: 0.95fr 1.05fr;

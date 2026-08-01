@@ -40,6 +40,27 @@ const checklist = [
   ["Abbruch", "Vorher festlegen, wann umgedreht oder ein früher Ausstieg genommen wird."],
 ];
 
+const oetztalCompare = [
+  { tour: "Lehner Wasserfall", difficulty: "B/C, kurz D", duration: "3–3,5 h", concern: "E-Variante vermeiden", status: "empfohlen" },
+  { tour: "Stuibenfall", difficulty: "C, meist B", duration: "3,5–4 h", concern: "Mind. 1,40 m · Seilsicherung", status: "empfohlen" },
+  { tour: "Reinhard-Schiestl", difficulty: "C/D · D-Steilstufe", duration: "2,5–3 h", concern: "Nicht mit Kindern planen", status: "reserve" },
+  { tour: "Gaislachkogl", difficulty: "–", duration: "halber Tag", concern: "Erholung ohne Druck", status: "ruhetag" },
+];
+
+const dolomitesCompare = [
+  { tour: "Roda di Vael", difficulty: "A/B", duration: "4,5–6 h", concern: "Höhe · langer Rundweg", status: "empfohlen" },
+  { tour: "Bepi Zac", difficulty: "moderat, B", duration: "6,5 h · 12 km", concern: "Sehr lang · Familie: Teilüberschreitung", status: "mit-Variante" },
+  { tour: "Santnerpass", difficulty: "B/C", duration: "6 h · 950 hm", concern: "Eisrinne · ungesichert", status: "reserve" },
+  { tour: "Val San Nicolò", difficulty: "–", duration: "nach Wahl", concern: "Niemand muss etwas beweisen", status: "ruhetag" },
+];
+
+const statusLabels: Record<string, string> = {
+  empfohlen: "Empfohlen",
+  reserve: "Nur als Reserve",
+  ruhetag: "Ruhetag",
+  "mit-Variante": "Mit Variante",
+};
+
 function MountainMark() {
   return (
     <span className="mountain-mark" aria-hidden="true">
@@ -93,6 +114,46 @@ function Highlights({ items }: { items: string[][] }) {
         </article>
       ))}
     </div>
+  );
+}
+
+function ComparisonTable({
+  items,
+  statusLabel,
+}: {
+  items: Array<{ tour: string; difficulty: string; duration: string; concern: string; status: string }>;
+  statusLabel: Record<string, string>;
+}) {
+  return (
+    <details className="compare">
+      <summary>Alle Touren im Vergleich</summary>
+      <div className="compare-scroll">
+        <table className="compare-table">
+          <thead>
+            <tr>
+              <th>Tour</th>
+              <th>Schwierigkeit</th>
+              <th>Dauer</th>
+              <th>Zu beachten</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {items.map((t) => (
+              <tr key={t.tour} className={`row-${t.status}`}>
+                <td className="col-tour">{t.tour}</td>
+                <td>{t.difficulty}</td>
+                <td>{t.duration}</td>
+                <td>{t.concern}</td>
+                <td className={`status status-${t.status}`}>
+                  {statusLabel[t.status] ?? t.status}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </details>
   );
 }
 
@@ -309,6 +370,7 @@ export default function Home() {
               copy="Zwei starke Familien-Klettersteige, eine sportliche Reserve und ein entspannter Panoramatag."
             />
             <Highlights items={oetztalHighlights} />
+            <ComparisonTable items={oetztalCompare} statusLabel={statusLabels} />
           </div>
         </div>
       </section>
@@ -498,6 +560,7 @@ export default function Home() {
               copy="Technisch oft moderat, insgesamt aber lang, hoch und exponiert. Roda di Vael ist der beste Einstieg."
             />
             <Highlights items={dolomitesHighlights} />
+            <ComparisonTable items={dolomitesCompare} statusLabel={statusLabels} />
           </div>
         </div>
       </section>

@@ -1,3 +1,13 @@
+import { useEffect, useState } from "react";
+
+const topbarLinks = [
+  { href: "#route", label: "Route" },
+  { href: "#oetztal", label: "Ötztal" },
+  { href: "#dolomiten", label: "Dolomiten" },
+  { href: "#rueckreise", label: "Rückreise" },
+  { href: "#praxis", label: "Praxis" },
+];
+
 const route = [
   { number: "01", place: "Sölden", region: "Ötztal", note: "Wasserfall-Klettersteige & sportliche Reserve" },
   { number: "02", place: "Timmelsjoch", region: "Moos & Meran", note: "Passfahrt, optionale Ferrata & Eis" },
@@ -87,6 +97,21 @@ function Highlights({ items }: { items: string[][] }) {
 }
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <main>
       <nav className="topbar" aria-label="Hauptnavigation">
@@ -95,12 +120,22 @@ export default function Home() {
           <span>Unsere Bergabenteuer</span>
         </a>
         <div className="navlinks">
-          <a href="#route">Route</a>
-          <a href="#oetztal">Ötztal</a>
-          <a href="#dolomiten">Dolomiten</a>
-          <a href="#rueckreise">Rückreise</a>
-          <a href="#praxis">Praxis</a>
+          {topbarLinks.map((link) => (
+            <a key={link.href} href={link.href}>
+              {link.label}
+            </a>
+          ))}
         </div>
+        <button
+          className={`hamburger${menuOpen ? " open" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-expanded={menuOpen}
+          aria-label={menuOpen ? "Menü schließen" : "Menü öffnen"}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
         <a
           className="download small"
           href="/bergabenteuer/downloads/Unsere_Bergabenteuer_Band1_Oetztal_Dolomiten_2026_V2.pdf"
@@ -109,6 +144,44 @@ export default function Home() {
           PDF
         </a>
       </nav>
+
+      <div
+        className={`drawer-backdrop${menuOpen ? " open" : ""}`}
+        onClick={closeMenu}
+        aria-hidden="true"
+      />
+      <aside
+        className={`mobile-drawer${menuOpen ? " open" : ""}`}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Navigation"
+      >
+        <button
+          className="drawer-close"
+          onClick={closeMenu}
+          aria-label="Menü schließen"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            aria-hidden="true"
+          >
+            <line x1="3" y1="3" x2="17" y2="17" />
+            <line x1="17" y1="3" x2="3" y2="17" />
+          </svg>
+        </button>
+        <nav aria-label="Seitennavigation">
+          {topbarLinks.map((link) => (
+            <a key={link.href} href={link.href} onClick={closeMenu}>
+              {link.label}
+            </a>
+          ))}
+        </nav>
+      </aside>
 
       <section id="start" className="hero">
         <img

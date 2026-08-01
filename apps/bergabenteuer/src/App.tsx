@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 
 const topbarLinks = [
   { href: "#route", label: "Route" },
-  { href: "#oetztal", label: "Ötztal" },
-  { href: "#dolomiten", label: "Dolomiten" },
+  { href: "#oetztal", label: "Ötztal", chapter: "oetztal" },
+  { href: "#dolomiten", label: "Dolomiten", chapter: "dolomiten" },
   { href: "#rueckreise", label: "Rückreise" },
   { href: "#praxis", label: "Praxis" },
 ];
@@ -225,7 +225,7 @@ export default function Home() {
             <a
               key={link.href}
               href={link.href}
-              className={activeSection === link.href.slice(1) ? "active" : ""}
+              className={`${link.chapter ? `nav-${link.chapter}` : ""}${activeSection === link.href.slice(1) ? " active" : ""}`}
             >
               {link.label}
             </a>
@@ -289,7 +289,7 @@ export default function Home() {
               key={link.href}
               href={link.href}
               onClick={closeMenu}
-              className={activeSection === link.href.slice(1) ? "active" : ""}
+              className={`${link.chapter ? `nav-${link.chapter}` : ""}${activeSection === link.href.slice(1) ? " active" : ""}`}
             >
               {link.label}
             </a>

@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-01T17:30:00Z",
+  "title": "Design System: Unsere Bergabenteuer",
+  "extensions": {
+    "colorMeta": {
+      "warm-paper": { "role": "neutral", "displayName": "Warm Paper", "canonical": "#f5f3ed", "tonalRamp": ["#faf8f4", "#f7f5ef", "#f5f3ed", "#f0ece4", "#e8e3d9", "#ded8cb", "#d0c9b9", "#beb5a4"] },
+      "alpine-ink": { "role": "neutral", "displayName": "Alpine Ink", "canonical": "#17202b", "tonalRamp": ["#080c10", "#0d131b", "#121a24", "#17202b", "#1f2b3a", "#2a3a4e", "#384c66", "#4a6282"] },
+      "muted-stone": { "role": "neutral", "displayName": "Muted Stone", "canonical": "#617080", "tonalRamp": ["#3a4450", "#45505e", "#505c6c", "#617080", "#738294", "#8796a6", "#9daab8", "#b5bfc8"] },
+      "deep-navy": { "role": "secondary", "displayName": "Deep Navy (Ötztal)", "canonical": "#17344c", "tonalRamp": ["#0a1a28", "#0e2335", "#122d42", "#17344c", "#1d3f5a", "#244c6c", "#2c5b80", "#356c96"] },
+      "alpine-blue": { "role": "secondary", "displayName": "Alpine Blue", "canonical": "#2d6b84", "tonalRamp": ["#143a4a", "#1c4b5e", "#245b72", "#2d6b84", "#377c96", "#448fa8", "#55a2b8", "#6db3c6"] },
+      "blue-mist": { "role": "neutral", "displayName": "Blue Mist", "canonical": "#dcecf0", "tonalRamp": ["#eaf4f6", "#e2eff2", "#dcecf0", "#d2e4e8", "#c4dae0", "#b2ccd4", "#9ebcc4", "#88a8b2"] },
+      "forest-green": { "role": "secondary", "displayName": "Forest Green", "canonical": "#526f58", "tonalRamp": ["#2c3f30", "#344a3a", "#3e5844", "#526f58", "#66856c", "#7c9c82", "#94b29a", "#acc6b2"] },
+      "deep-pine": { "role": "secondary", "displayName": "Deep Pine (Dolomites)", "canonical": "#314b3a", "tonalRamp": ["#192a20", "#203428", "#29402f", "#314b3a", "#3b5844", "#466850", "#527a5e", "#608c6e"] },
+      "pale-sage": { "role": "neutral", "displayName": "Pale Sage", "canonical": "#e2e9df", "tonalRamp": ["#eff3ed", "#e8efe5", "#e2e9df", "#d6e0d2", "#c6d4c0", "#b2c2aa", "#9cae94", "#84987c"] },
+      "ember-orange": { "role": "primary", "displayName": "Ember Orange", "canonical": "#c16d40", "tonalRamp": ["#f5d8c4", "#ecc4a8", "#e0ad8a", "#d1936a", "#c16d40", "#b05c32", "#9c4c24", "#853e18"] },
+      "trail-orange": { "role": "primary", "displayName": "Trail Orange", "canonical": "#a44a24", "tonalRamp": ["#ecc8b0", "#dcaa8a", "#c88c64", "#b66e42", "#a44a24", "#91401c", "#7c3614", "#662c0e"] },
+      "trail-sand": { "role": "neutral", "displayName": "Trail Sand", "canonical": "#e8dfd1", "tonalRamp": ["#f2ede4", "#ece5d8", "#e8dfd1", "#ded4c2", "#d0c4ae", "#beb098", "#a89a82", "#90826c"] },
+      "linen-line": { "role": "neutral", "displayName": "Linen Line", "canonical": "rgba(23, 32, 43, 0.14)", "tonalRamp": ["rgba(23,32,43,0.05)", "rgba(23,32,43,0.08)", "rgba(23,32,43,0.11)", "rgba(23,32,43,0.14)", "rgba(23,32,43,0.18)", "rgba(23,32,43,0.24)", "rgba(23,32,43,0.32)", "rgba(23,32,43,0.44)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headline only — the page title at full dramatic weight." },
+      "headline": { "displayName": "Headline", "purpose": "Section headings (h2) — the primary content anchors." },
+      "title": { "displayName": "Title", "purpose": "Highlight titles, return-grid cards, chapter list entries." },
+      "body": { "displayName": "Body", "purpose": "All prose and lead paragraphs. 65–75ch measure on the section container." },
+      "label": { "displayName": "Label", "purpose": "Navigation links, buttons, kickers, stats labels — the utility voice." }
+    },
+    "shadows": [
+      { "name": "drawer-elevation", "value": "-8px 0 32px rgba(10, 29, 43, 0.16)", "purpose": "The mobile drawer slides over content — this is the one deliberate shadow in the system." }
+    ],
+    "motion": [
+      { "name": "ease-arrival", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Drawer slide-in, backdrop fade, progress bar scale transform." },
+      { "name": "ease-feedback", "value": "0.15s linear", "purpose": "Scroll-progress bar updates. Follows the scroll event tightly with minimal latency." }
+    ],
+    "breakpoints": [
+      { "name": "md", "value": "900px" },
+      { "name": "sm", "value": "620px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Download Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The sole filled CTA button. Appears in the hero, topbar (small), and footer.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">REISE ENTDECKEN</a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 18px; padding: 14px 20px; background: #c16d40; color: #fff; font-family: Arial, Helvetica, sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border: none; transition: background 0.15s ease; } .ds-btn-primary:hover { background: #b05c32; } .ds-btn-primary:focus-visible { outline: 2px solid #c16d40; outline-offset: 3px; }"
+    },
+    {
+      "name": "Text Link",
+      "kind": "custom",
+      "refersTo": "text-link",
+      "description": "Inline link with bottom-border underline. Used for external tour references and secondary hero action.",
+      "html": "<a class=\"ds-text-link\" href=\"#\">AKTUELLE TOURINFO ↗</a>",
+      "css": ".ds-text-link { display: inline-block; padding-bottom: 4px; border-bottom: 1px solid currentColor; font-family: Arial, Helvetica, sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; text-decoration: none; color: inherit; transition: opacity 0.15s ease; } .ds-text-link:hover { opacity: 0.7; } .ds-text-link:focus-visible { outline: 2px solid #c16d40; outline-offset: 4px; }"
+    },
+    {
+      "name": "Topbar Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Fixed horizontal topbar nav. Brand mark left, 5 section links center, CTA right. Translucent paper bg with backdrop blur.",
+      "html": "<nav class=\"ds-topbar\"><a class=\"ds-topbar-brand\" href=\"#\"><svg width=\"28\" height=\"20\" viewBox=\"0 0 34 24\"><polygon points=\"5,24 17,6 29,24\" fill=\"#2d6b84\"/><polygon points=\"17,22 25,4 9,4\" fill=\"#526f58\"/></svg><span>UNSERE BERGABENTEUER</span></a><div class=\"ds-topbar-nav\"><a href=\"#route\" class=\"active\">Route</a><a href=\"#oetztal\">Ötztal</a><a href=\"#dolomiten\">Dolomiten</a><a href=\"#rueckreise\">Rückreise</a><a href=\"#praxis\">Praxis</a></div></nav>",
+      "css": ".ds-topbar { position: fixed; z-index: 50; top: 0; left: 0; right: 0; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; min-height: 72px; padding: 0 32px; background: rgba(245,243,237,0.92); border-bottom: 1px solid rgba(23,32,43,0.14); backdrop-filter: blur(14px); font-family: Arial, Helvetica, sans-serif; } .ds-topbar-brand { display: inline-flex; align-items: center; gap: 12px; font-size: 0.86rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; text-decoration: none; color: #17202b; } .ds-topbar-nav { display: flex; gap: 24px; } .ds-topbar-nav a { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; color: #17202b; transition: color 0.2s ease; } .ds-topbar-nav a.active { color: #a44a24; }"
+    },
+    {
+      "name": "Principle Callout",
+      "kind": "card",
+      "refersTo": "principle",
+      "description": "Sand-background two-column callout for planning principles and recommendations.",
+      "html": "<div class=\"ds-principle\"><strong>PLANUNGSPRINZIP</strong><p>Nach zwei fordernden Tagen folgt idealerweise ein leichterer Tag.</p></div>",
+      "css": ".ds-principle { display: grid; grid-template-columns: 180px 1fr; gap: 28px; padding: 30px; background: #e8dfd1; } .ds-principle strong { color: #a44a24; font-family: Arial, Helvetica, sans-serif; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; } .ds-principle p { margin: 0; color: #17202b; font-family: Arial, Helvetica, sans-serif; line-height: 1.55; }"
+    },
+    {
+      "name": "Tour Stats Block",
+      "kind": "custom",
+      "refersTo": "stats-block",
+      "description": "Four-column definition list with bordered separators. Used in every tour section.",
+      "html": "<dl class=\"ds-stats\"><div><dt>SCHWIERIGKEIT</dt><dd>B/C, kurz D</dd></div><div><dt>GESAMTZEIT</dt><dd>ca. 3–3,5 h</dd></div><div><dt>HÖHENMETER</dt><dd>ca. 220 hm</dd></div><div><dt>FAMILIENLINIE</dt><dd>Originalroute</dd></div></dl>",
+      "css": ".ds-stats { display: grid; grid-template-columns: repeat(4, 1fr); margin: 34px 0; border-top: 1px solid rgba(23,32,43,0.14); border-bottom: 1px solid rgba(23,32,43,0.14); } .ds-stats div { padding: 18px 12px 18px 0; } .ds-stats div + div { padding-left: 14px; border-left: 1px solid rgba(23,32,43,0.14); } .ds-stats dt { margin-bottom: 5px; color: #617080; font-family: Arial, Helvetica, sans-serif; font-size: 0.65rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; } .ds-stats dd { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 1.05rem; font-weight: 700; color: #17202b; }"
+    },
+    {
+      "name": "Route Timeline",
+      "kind": "custom",
+      "refersTo": "route-timeline",
+      "description": "Four-stop horizontal timeline with numbered navy circles and a connecting line. The signature navigational component.",
+      "html": "<div class=\"ds-route-line\"><article><span class=\"ds-route-number\">01</span><p>SÖLDEN</p><h3>Ötztal</h3><small>Wasserfall-Klettersteige</small></article><article><span class=\"ds-route-number\">02</span><p>TIMMELSJOCH</p><h3>Moos & Meran</h3><small>Passfahrt & Eis</small></article></div>",
+      "css": ".ds-route-line { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-top: 85px; } .ds-route-line::before { position: absolute; top: 20px; left: 4%; right: 4%; height: 1px; background: rgba(23,32,43,0.14); content: ''; } .ds-route-number { position: absolute; z-index: 1; top: 0; display: grid; width: 40px; height: 40px; place-items: center; background: #17344c; border-radius: 50%; color: #fff; font-family: Arial, Helvetica, sans-serif; font-size: 0.7rem; font-weight: 800; } article { position: relative; padding-top: 58px; } p { margin-bottom: 4px; color: #2d6b84; font-family: Arial, Helvetica, sans-serif; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; } h3 { font-family: Georgia, 'Times New Roman', serif; font-size: 1.75rem; font-weight: 500; color: #17202b; }"
+    },
+    {
+      "name": "Mobile Drawer",
+      "kind": "nav",
+      "refersTo": "mobile-drawer",
+      "description": "Slide-in right panel for mobile navigation. Paper background, serif links, backdrop overlay.",
+      "html": "<aside class=\"ds-mobile-drawer open\"><button class=\"ds-drawer-close\" aria-label=\"Menü schließen\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"#17202b\" stroke-width=\"2\"><line x1=\"3\" y1=\"3\" x2=\"17\" y2=\"17\"/><line x1=\"17\" y1=\"3\" x2=\"3\" y2=\"17\"/></svg></button><nav><a href=\"#route\" class=\"active\">Route</a><a href=\"#oetztal\">Ötztal</a><a href=\"#dolomiten\">Dolomiten</a><a href=\"#rueckreise\">Rückreise</a><a href=\"#praxis\">Praxis</a></nav></aside>",
+      "css": ".ds-mobile-drawer { position: fixed; z-index: 60; top: 0; right: 0; bottom: 0; width: min(340px, 86vw); padding: 94px 36px 36px; background: #f5f3ed; box-shadow: -8px 0 32px rgba(10,29,43,0.16); transform: translateX(0); overflow-y: auto; } .ds-mobile-drawer nav a { display: block; padding: 15px 0; border-bottom: 1px solid rgba(23,32,43,0.14); font-family: Georgia, 'Times New Roman', serif; font-size: 1.15rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; color: #17202b; } .ds-mobile-drawer nav a:first-of-type { border-top: 1px solid rgba(23,32,43,0.14); } .ds-mobile-drawer nav a.active { color: #a44a24; } .ds-drawer-close { position: absolute; top: 16px; right: 16px; display: grid; width: 44px; height: 44px; place-items: center; padding: 0; background: none; border: 0; cursor: pointer; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Alpine Field Guide",
+    "overview": "A personal, tactile guidebook you'd highlight in the margins, fold the corners of, and carry into the mountains. Warm paper backgrounds, sturdy serif headings, and images that command space rather than decorate it. The design language treats the browser as a printed page — deliberate typographic hierarchy, generous whitespace, and a restrained palette that changes temperature between chapters. Every interactive element references the alpine subject: route numbers as elevation markers, navigation as trail signs, buttons as gear you pack.\n\nThe system is deeply authored, not templated. The CSS-only mountain mark logo, the .route-line timeline with numbered circles, the .sequence tour-step indicator — these are bespoke artifacts that could not serve a different product. The personality is personal, never corporate: honest safety warnings, child-specific guidance rendered as supportive callouts, and a Val San Nicolò rest day framed as 'Der Tag, an dem niemand etwas beweisen muss.'",
+    "keyCharacteristics": [
+      "Editorial magazine density with print-informed spacing and hierarchy",
+      "Two-temperature palette: blue-navy for Ötztal, green-tone for Dolomiten, orange bridging both",
+      "Georgia serif headings paired with Arial body text (intentional but open to self-hosted serif)",
+      "Depth conveyed through colored-background sections, not shadows",
+      "One intentional spatial moment: the fixed topbar's backdrop blur as a tracing-paper overlay",
+      "Bespoke CSS-illustrated components (mountain mark, route timeline, sequence steps)"
+    ],
+    "rules": [
+      { "name": "The Two-Chapter Rule", "body": "The Ötztal chapter carries the blue-navy palette; the Dolomites chapter carries the green palette. Elements inside each chapter inherit its atmosphere — eyebrow and lead text on dark backgrounds are tinted with rgba(255,255,255,0.7), not gray. Orange is the only color that spans both chapters without modification.", "section": "colors" },
+      { "name": "The One Accent Rule", "body": "Ember Orange appears on ≤10% of any given screen's surface area. It backgrounds exactly one visible CTA at a time. Trail Orange carries the text-only accent burden so Ember Orange stays rare.", "section": "colors" },
+      { "name": "The Eyebrow-to-Headline Rule", "body": "Every section opens with an eyebrow (p.eyebrow → label weight, alpine-blue, wide tracking) followed by an h2 headline. The eyebrow sets context; the headline makes the statement. This pattern is binding for all new chapter or section introductions.", "section": "typography" }
+    ],
+    "dos": [
+      "Do use Georgia serif for all headings and never for body text.",
+      "Do pair every section with an eyebrow (p.eyebrow) preceding the h2 headline.",
+      "Do use ember-orange for exactly one visible CTA per screen. If a second orange element lands in the same viewport, demote one to secondary.",
+      "Do carry chapter atmosphere into nested elements: on navy/green-dark backgrounds, tint secondary text with rgba(255,255,255,0.7), never gray.",
+      "Do use linen-line (1px solid rgba(23,32,43,0.14)) for all structural dividers.",
+      "Do keep interactive touch targets at minimum 44×44px."
+    ],
+    "donts": [
+      "Don't use shadows for depth. The system is flat; depth comes from tonal layering (colored section backgrounds). The mobile drawer shadow is the one deliberate exception.",
+      "Don't apply border-radius >3px to any structural element. Circles are reserved for numbered markers.",
+      "Don't add a second accent color. Blue and green are atmosphere, not accents — they locate the reader in a chapter, never signal an action.",
+      "Don't use gray text on colored backgrounds. Secondary text should be tinted white on dark surfaces."
+    ]
+  }
+}

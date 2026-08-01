@@ -726,6 +726,10 @@ blockquote {
   object-fit: cover;
 }
 
+.tour-image {
+  aspect-ratio: 4 / 3;
+}
+
 #lehner .tour-image img {
   object-position: 55% center;
 }

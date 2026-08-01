@@ -302,6 +302,9 @@ export default function Home() {
           src="/bergabenteuer/images/roda-di-vael.jpg"
           alt="Rotwand im Rosengarten der Dolomiten"
           className="hero-image"
+          width="1800"
+          height="1350"
+          fetchPriority="high"
         />
         <div className="hero-shade" />
         <div className="hero-content">
@@ -380,6 +383,10 @@ export default function Home() {
           <img
             src="/bergabenteuer/images/lehner-wasserfall.jpg"
             alt="Klettersteig am Lehner Wasserfall"
+            width="1800"
+            height="1350"
+            loading="lazy"
+            decoding="async"
           />
           <span>Foto: Fuchs Robert · CC BY 3.0</span>
         </div>
@@ -570,6 +577,10 @@ export default function Home() {
           <img
             src="/bergabenteuer/images/roda-di-vael.jpg"
             alt="Rotwand und Roda di Vael im Rosengarten"
+            width="1800"
+            height="1350"
+            loading="lazy"
+            decoding="async"
           />
           <span>Foto: Maurizio Ceol · CC BY 3.0</span>
         </div>
@@ -613,6 +624,10 @@ export default function Home() {
           <img
             src="/bergabenteuer/images/bepi-zac.jpg"
             alt="Felsfenster an der Alta Via Bepi Zac"
+            width="1800"
+            height="1350"
+            loading="lazy"
+            decoding="async"
           />
           <span>Foto: Maurizio Ceol · CC BY 3.0</span>
         </div>
@@ -663,6 +678,10 @@ export default function Home() {
           <img
             src="/bergabenteuer/images/santnerpass.jpg"
             alt="Felslandschaft am Santnerpass"
+            width="1800"
+            height="1202"
+            loading="lazy"
+            decoding="async"
           />
           <span>Foto: Anna Marchenkova · CC BY-SA 4.0</span>
         </div>

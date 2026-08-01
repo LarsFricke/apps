@@ -21,10 +21,23 @@ for (const app of apps) {
   execSync("npm run build", { stdio: "inherit", cwd: join(appsDir, app) });
 }
 
-const redirectLines = apps.map((app) => `/${app}/*  /${app}/index.html  200`).join("\n");
-writeFileSync(join(distDir, "_redirects"), redirectLines + "\n");
+const landing = `<!doctype html>
+<html><head><meta charset="utf-8"><title>my-apps</title></head>
+<body style="font-family:sans-serif;padding:2rem">
+<h1>my-apps</h1>
+<ul>
+${apps.map((a) => `  <li><a href="/${a}/">${a}</a></li>`).join("\n")}
+</ul>
+</body></html>
+`;
+writeFileSync(join(distDir, "index.html"), landing);
 
-const routes = { version: 1, include: [], exclude: ["/*"] };
-writeFileSync(join(distDir, "_routes.json"), JSON.stringify(routes, null, 2) + "\n");
+writeFileSync(
+  join(distDir, ".assetsignore"),
+  `_redirects
+_headers
+_routes.json
+`
+);
 
 console.log(`\nDone. Output: ${distDir}`);

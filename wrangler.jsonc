@@ -1,5 +1,11 @@
 {
-  "$schema": "node_modules/wrangler/package.json",
+  "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "my-apps",
-  "pages_build_output_dir": "dist"
+  "compatibility_date": "2026-07-31",
+  "main": "./worker.js",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "none"
+  }
 }

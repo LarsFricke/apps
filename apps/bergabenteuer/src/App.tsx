@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import "./topo-theme.css";
 
 const topbarLinks = [
   { href: "#route", label: "Route" },
@@ -161,9 +162,21 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [isTopo, setIsTopo] = useState(() => {
+    if (typeof window !== "undefined") {
+      return document.body.classList.contains("theme-topo");
+    }
+    return false;
+  });
   const hamburgerRef = useRef<HTMLButtonElement>(null);
   const drawerRef = useRef<HTMLDivElement>(null);
   const closeBtnRef = useRef<HTMLButtonElement>(null);
+
+  const toggleTheme = () => {
+    const next = !isTopo;
+    setIsTopo(next);
+    document.body.classList.toggle("theme-topo", next);
+  };
 
   useEffect(() => {
     if (menuOpen) {
@@ -924,6 +937,9 @@ export default function Home() {
           >
             PDF herunterladen
           </a>
+          <button className="theme-toggle" onClick={toggleTheme} aria-pressed={isTopo}>
+            {isTopo ? "Karte" : "Feldbuch"}
+          </button>
         </div>
       </footer>
     </main>

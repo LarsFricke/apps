@@ -1233,6 +1233,33 @@ footer {
   text-transform: uppercase;
 }
 
+.theme-toggle {
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  font-family: inherit;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: white;
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 3px;
+}
+
 @media (max-width: 900px) {
   .topbar {
     grid-template-columns: 1fr auto auto;

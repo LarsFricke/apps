@@ -1,0 +1,465 @@
+/* ═══════════════════════════════════════════════════════
+   Topographic Map Theme — Unsere Bergabenteuer
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Palette ────────────────────────────────────────── */
+
+body.theme-topo {
+  --paper: #f3efe5;
+  --white: #faf8f3;
+  --ink: #282218;
+  --muted: #6b6252;
+  --navy: #2a3b3c;
+  --blue: #4f7e8e;
+  --blue-soft: #dae8eb;
+  --green: #547354;
+  --green-dark: #2b3d2b;
+  --green-soft: #dde6dd;
+  --orange: #c6452c;
+  --orange-text: #a13622;
+  --sand: #e6deca;
+  --line: rgba(40, 34, 24, 0.13);
+  --serif: Georgia, "Times New Roman", serif;
+}
+
+/* ── Typography ─────────────────────────────────────── */
+
+body.theme-topo {
+  font-family: "Helvetica Neue", "Trebuchet MS", "Futura", Arial, sans-serif;
+}
+
+body.theme-topo h1,
+body.theme-topo h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+
+body.theme-topo .eyebrow {
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  font-size: 0.7rem;
+}
+
+body.theme-topo .stats dt {
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+body.theme-topo .lead {
+  color: var(--muted);
+  font-style: normal;
+}
+
+/* ── Contour-line background ────────────────────────── */
+
+body.theme-topo .chapter,
+body.theme-topo .split-band,
+body.theme-topo .valley {
+  background-image:
+    repeating-radial-gradient(
+      circle at 8px 8px,
+      transparent 0,
+      transparent 3px,
+      rgba(255, 255, 255, 0.04) 3.5px,
+      rgba(255, 255, 255, 0.04) 4px
+    ),
+    repeating-radial-gradient(
+      circle at 32px 20px,
+      transparent 0,
+      transparent 5px,
+      rgba(255, 255, 255, 0.03) 5.5px,
+      rgba(255, 255, 255, 0.03) 6px
+    );
+}
+
+body.theme-topo .chapter-blue {
+  background-color: var(--navy);
+}
+
+body.theme-topo .chapter-green {
+  background-color: var(--green-dark);
+}
+
+body.theme-topo .split-band {
+  background-color: var(--navy);
+}
+
+body.theme-topo .valley {
+  background-color: var(--green-dark);
+}
+
+body.theme-topo .practice {
+  background-color: var(--white);
+}
+
+/* ── Topbar: compass bar ────────────────────────────── */
+
+body.theme-topo .topbar {
+  background: rgba(243, 239, 229, 0.94);
+  border-bottom: 1px solid var(--line);
+  min-height: 66px;
+}
+
+body.theme-topo .progress-bar {
+  height: 3px;
+  background: var(--orange);
+}
+
+/* ── Hero: expedition opener ────────────────────────── */
+
+body.theme-topo .hero-shade {
+  background:
+    linear-gradient(135deg, rgba(20, 16, 10, 0.95) 0%, rgba(28, 24, 16, 0.55) 42%, rgba(28, 24, 16, 0.08) 78%),
+    linear-gradient(0deg, rgba(20, 16, 10, 0.7), transparent 50%);
+}
+
+body.theme-topo .hero-content {
+  padding: 160px 0 80px;
+}
+
+body.theme-topo .hero h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+body.theme-topo .hero-sub {
+  font-family: var(--serif);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+body.theme-topo .download {
+  background: var(--orange);
+  border-radius: 2px;
+}
+
+body.theme-topo .download.small {
+  border-radius: 2px;
+}
+
+/* ── Route timeline → waypoint markers ──────────────── */
+
+body.theme-topo .route-line::before {
+  background: repeating-linear-gradient(
+    to right,
+    var(--line) 0,
+    var(--line) 3px,
+    transparent 3px,
+    transparent 10px
+  );
+  height: 2px;
+}
+
+body.theme-topo .route-number {
+  border-radius: 2px;
+  transform: rotate(45deg);
+  width: 34px;
+  height: 34px;
+  font-size: 0.62rem;
+}
+
+body.theme-topo .route-number::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+body.theme-topo .route-line article {
+  padding-top: 52px;
+}
+
+/* ── Sections: trail-marker dividers ────────────────── */
+
+body.theme-topo .section {
+  border-bottom: 1px solid var(--line);
+}
+
+body.theme-topo .section:last-of-type,
+body.theme-topo .chapter .section,
+body.theme-topo .split-band .section,
+body.theme-topo .valley .section,
+body.theme-topo .practice .section,
+body.theme-topo footer .section {
+  border-bottom: 0;
+}
+
+body.theme-topo .highlights {
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+body.theme-topo .highlights article {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+body.theme-topo .highlights > article > span {
+  color: #b0d0d8;
+  font-family: "Helvetica Neue", "Trebuchet MS", "Futura", Arial, sans-serif;
+  font-weight: 700;
+}
+
+/* ── Tour sections: contour vignettes ───────────────── */
+
+body.theme-topo .tour-image {
+  border: 1px solid var(--line);
+  box-shadow: 0 2px 12px rgba(40, 34, 24, 0.12);
+}
+
+body.theme-topo .tour-image span {
+  background: rgba(20, 16, 10, 0.78);
+  font-family: "Helvetica Neue", "Trebuchet MS", "Futura", Arial, sans-serif;
+  font-size: 0.62rem;
+}
+
+/* ── Stats: elevation markers ───────────────────────── */
+
+body.theme-topo .stats {
+  border-top: 2px solid var(--orange);
+  border-bottom: 1px solid var(--line);
+}
+
+body.theme-topo .stats div + div {
+  border-left: 1px solid var(--line);
+}
+
+body.theme-topo .stats dt {
+  color: var(--orange-text);
+}
+
+body.theme-topo .stats dd {
+  font-weight: 600;
+}
+
+body.theme-topo .copy-columns p,
+body.theme-topo .compact-cards p {
+  color: var(--muted);
+}
+
+/* ── Callouts: trail notes ──────────────────────────── */
+
+body.theme-topo .callout {
+  border-radius: 2px;
+}
+
+body.theme-topo .callout.danger {
+  background: #f3e4db;
+  border-left: 3px solid var(--orange-text);
+}
+
+body.theme-topo .principle,
+body.theme-topo .wide-callout,
+body.theme-topo .legal-note {
+  border-radius: 2px;
+}
+
+body.theme-topo blockquote {
+  border-left: 3px solid var(--orange);
+  font-style: italic;
+}
+
+/* ── Compact cards: trail cards ─────────────────────── */
+
+body.theme-topo .compact-cards article {
+  border: 1px solid var(--line);
+  border-radius: 2px;
+}
+
+body.theme-topo .compact-cards article.callout {
+  border-color: transparent;
+}
+
+/* ── Transfer steps: mileage posts ──────────────────── */
+
+body.theme-topo .transfer-steps {
+  border-top: 2px solid var(--orange);
+  border-bottom: 1px solid var(--line);
+}
+
+body.theme-topo .transfer-steps article + article {
+  border-left: 1px solid var(--line);
+}
+
+/* ── Sequence: hiking steps ─────────────────────────── */
+
+body.theme-topo .sequence span::after {
+  background: repeating-linear-gradient(
+    to right,
+    var(--line) 0,
+    var(--line) 2px,
+    transparent 2px,
+    transparent 6px
+  );
+}
+
+body.theme-topo .sequence b {
+  border-color: var(--orange);
+  color: var(--orange);
+  border-radius: 2px;
+  transform: rotate(45deg);
+  width: 26px;
+  height: 26px;
+  font-size: 0.62rem;
+}
+
+/* ── Valley section: rest camp ──────────────────────── */
+
+body.theme-topo .valley .lead {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+body.theme-topo .valley-options article {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 2px;
+}
+
+body.theme-topo .valley-options span {
+  color: #d0e6d0;
+}
+
+/* ── Return grid: route choice ──────────────────────── */
+
+body.theme-topo .active-card {
+  background: var(--navy);
+  border-radius: 2px;
+}
+
+body.theme-topo .active-card .stats,
+body.theme-topo .active-card .stats div + div {
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+body.theme-topo .lake-card {
+  border-radius: 2px;
+}
+
+/* ── Practice: base camp ────────────────────────────── */
+
+body.theme-topo .check-grid article > span {
+  background: var(--green-soft);
+  color: var(--green-dark);
+  border-radius: 2px;
+}
+
+body.theme-topo .tags span {
+  background: var(--paper);
+  border-radius: 2px;
+}
+
+body.theme-topo .emergency {
+  border-radius: 2px;
+}
+
+body.theme-topo .emergency b {
+  font-weight: 500;
+}
+
+/* ── Sources ────────────────────────────────────────── */
+
+body.theme-topo details {
+  border-top-color: var(--line);
+}
+
+/* ── Footer ─────────────────────────────────────────── */
+
+body.theme-topo footer {
+  background: var(--ink);
+}
+
+body.theme-topo .footer-inner a {
+  color: var(--orange);
+}
+
+/* ── Mobile drawer ──────────────────────────────────── */
+
+body.theme-topo .mobile-drawer {
+  background: var(--paper);
+  box-shadow: -4px 0 24px rgba(20, 16, 10, 0.2);
+}
+
+body.theme-topo .drawer-backdrop {
+  background: rgba(20, 16, 10, 0.55);
+}
+
+body.theme-topo .mobile-drawer nav a {
+  border-bottom-color: var(--line);
+}
+
+body.theme-topo .mobile-drawer nav a:first-of-type {
+  border-top-color: var(--line);
+}
+
+/* ── Comparison table ───────────────────────────────── */
+
+body.theme-topo .compare {
+  border-top-color: rgba(255, 255, 255, 0.18);
+}
+
+body.theme-topo .compare-table th {
+  border-bottom-color: rgba(255, 255, 255, 0.22);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+body.theme-topo .compare-table td {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+body.theme-topo .row-reserve td {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* ── Focus ring ─────────────────────────────────────── */
+
+body.theme-topo a:focus-visible,
+body.theme-topo button:focus-visible,
+body.theme-topo summary:focus-visible {
+  outline-color: var(--orange);
+}
+
+body.theme-topo .hamburger:focus-visible,
+body.theme-topo .drawer-close:focus-visible {
+  outline-color: var(--orange);
+}
+
+/* ── Active nav ─────────────────────────────────────── */
+
+body.theme-topo .navlinks a.active {
+  color: var(--orange-text);
+}
+
+body.theme-topo .navlinks a.nav-oetztal.active {
+  color: var(--blue);
+}
+
+body.theme-topo .navlinks a.nav-dolomiten.active {
+  color: var(--green);
+}
+
+body.theme-topo .mobile-drawer nav a.active {
+  color: var(--orange-text);
+}
+
+body.theme-topo .mobile-drawer nav a.nav-oetztal.active {
+  color: var(--blue);
+}
+
+body.theme-topo .mobile-drawer nav a.nav-dolomiten.active {
+  color: var(--green);
+}
+
+/* ── Skip link ──────────────────────────────────────── */
+
+body.theme-topo .skip-link {
+  background: var(--orange);
+}
+
+/* ── Print ──────────────────────────────────────────── */
+
+@media print {
+  body.theme-topo .chapter,
+  body.theme-topo .split-band,
+  body.theme-topo .valley,
+  body.theme-topo .practice {
+    background-image: none;
+  }
+}
